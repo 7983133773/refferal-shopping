@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>shopkart india</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%232a5df0'/><text x='50' y='68' font-size='52' font-weight='bold' fill='%23ffd23f' text-anchor='middle' font-family='Arial'>S</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#2a5df0; --blue-d:#1b3fb8; --navy:#101a3d; --navy2:#16225a;
+  --yellow:#ffd23f; --yellow-d:#f5b301;
+  --green:#178a4c; --green-l:#e7f7ee;
+  --orange:#ff6b2c; --red:#e5484d;
+  --bg:#f2f4f9; --card:#ffffff; --line:#e5e9f2;
+  --ink:#1c2333; --mut:#6b7590;
+  --disp:'Bricolage Grotesque',sans-serif;
+  --body:'Manrope',sans-serif;
+  --sh:0 10px 30px rgba(16,26,61,.10);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased}
+body.lock{overflow:hidden}
+img{display:block}
+button{font-family:var(--body);cursor:pointer;border:none;background:none}
+button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+.wrap{max-width:1240px;margin:0 auto;padding:0 16px}
+svg.i{width:18px;height:18px;flex:none;display:inline-block;vertical-align:-3px}
+
+/* ---------- ticker ---------- */
+.ticker{background:var(--navy);color:#e8ecff;overflow:hidden;white-space:nowrap;font-size:12.5px;font-weight:700;letter-spacing:.5px}
+.tk-track{display:inline-flex;gap:56px;padding:8px 0;width:max-content;animation:tk 30s linear infinite}
+.tk-track span{display:inline-flex;align-items:center;gap:10px}
+.tk-track svg{width:13px;height:13px;color:var(--yellow)}
+@keyframes tk{to{transform:translateX(-50%)}}
+
+/* ---------- header ---------- */
+header{position:sticky;top:0;z-index:60;background:linear-gradient(120deg,var(--blue) 0%,var(--blue-d) 100%);box-shadow:0 2px 12px rgba(16,26,61,.25)}
+.hrow{display:flex;align-items:center;gap:18px;padding:12px 16px;max-width:1240px;margin:0 auto}
+.logo{display:flex;flex-direction:column;text-decoration:none;line-height:1}
+.logo b{font-family:var(--disp);font-weight:800;font-size:27px;color:#fff;letter-spacing:-.5px}
+.logo b span{color:var(--yellow)}
+.logo small{font-size:10.5px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#bcd0ff;margin-top:3px}
+.search{flex:1;max-width:600px;display:flex;align-items:center;gap:10px;background:#fff;border-radius:9px;padding:0 14px;height:42px;box-shadow:0 2px 8px rgba(0,0,0,.12)}
+.search svg{color:var(--mut);width:19px;height:19px;flex:none}
+.search input{flex:1;border:none;outline:none;font:600 14px var(--body);color:var(--ink);background:none;min-width:0}
+.search input::placeholder{color:#9aa3bb;font-weight:500}
+.cartbtn{position:relative;display:flex;align-items:center;gap:9px;color:#fff;font:800 15px var(--disp);padding:9px 16px;border-radius:9px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);transition:.2s;margin-left:auto}
+.cartbtn:hover{background:rgba(255,255,255,.22);transform:translateY(-1px)}
+.cartbtn svg{width:20px;height:20px}
+.badge{position:absolute;top:-8px;right:-7px;min-width:21px;height:21px;padding:0 5px;border-radius:11px;background:var(--yellow);color:var(--navy);font:800 12px var(--body);display:flex;align-items:center;justify-content:center;border:2px solid var(--blue-d)}
+.badge.hide{display:none}
+.badge.pop{animation:bp .35s ease}
+@keyframes bp{50%{transform:scale(1.4)}}
+
+/* ---------- category bar ---------- */
+.catbar{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:66px;z-index:55}
+.chips{display:flex;gap:9px;overflow-x:auto;padding:11px 16px;scrollbar-width:none;max-width:1240px;margin:0 auto}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;display:flex;align-items:center;gap:8px;padding:8px 16px;border-radius:999px;border:1.5px solid var(--line);background:#fff;font:700 13px var(--body);color:#3c4560;transition:.2s;white-space:nowrap}
+.chip .dot{width:8px;height:8px;border-radius:50%;background:var(--c,#2a5df0)}
+.chip:hover{border-color:var(--blue);color:var(--blue)}
+.chip.on{background:var(--navy);border-color:var(--navy);color:#fff}
+
+/* ---------- banner ---------- */
+.banner{position:relative;overflow:hidden;border-radius:16px;margin:18px auto 0;background:linear-gradient(115deg,#1b2f8f 0%,#2a5df0 55%,#3f74ff 100%);color:#fff;padding:38px 36px;box-shadow:var(--sh)}
+.banner::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.14) 1.5px,transparent 1.5px);background-size:22px 22px;pointer-events:none}
+.banner::after{content:"";position:absolute;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle,rgba(255,210,63,.35),transparent 65%);right:-60px;top:-90px;pointer-events:none}
+.b-tag{display:inline-flex;align-items:center;gap:8px;background:var(--yellow);color:var(--navy);font:800 12px var(--disp);letter-spacing:2px;padding:6px 13px;border-radius:6px;text-transform:uppercase}
+.b-tag svg{width:13px;height:13px}
+.banner h1{font-family:var(--disp);font-weight:800;font-size:clamp(30px,5vw,52px);letter-spacing:-1px;margin:14px 0 8px;line-height:1.02}
+.banner h1 em{font-style:normal;color:var(--yellow)}
+.banner p{color:#d5deff;font-weight:600;font-size:15px;max-width:460px}
+.b-row{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin-top:22px;position:relative;z-index:2}
+.cd{display:flex;align-items:center;gap:10px;background:rgba(8,13,40,.55);border:1px solid rgba(255,255,255,.18);border-radius:10px;padding:9px 15px}
+.cd svg{width:17px;height:17px;color:var(--yellow)}
+.cd b{font:800 17px var(--disp);letter-spacing:2px;color:#fff;font-variant-numeric:tabular-nums}
+.cd small{font-size:11px;font-weight:700;color:#aab8ea;text-transform:uppercase;letter-spacing:1px}
+.btn-y{display:inline-flex;align-items:center;gap:9px;background:linear-gradient(180deg,var(--yellow),var(--yellow-d));color:var(--navy);font:800 14.5px var(--disp);padding:12px 22px;border-radius:10px;text-decoration:none;box-shadow:0 6px 18px rgba(0,0,0,.25);transition:.2s}
+.btn-y:hover{transform:translateY(-2px);filter:brightness(1.05)}
+.btn-y svg{width:17px;height:17px}
+.b-imgs{position:absolute;right:40px;top:50%;transform:translateY(-50%);display:flex;gap:16px;z-index:1}
+.b-img{width:132px;height:168px;border-radius:14px;overflow:hidden;border:4px solid #fff;box-shadow:0 18px 40px rgba(0,0,0,.35);background:#dfe5f5}
+.b-img img{width:100%;height:100%;object-fit:cover}
+.b-img:nth-child(1){transform:rotate(-7deg);animation:bob 4s ease-in-out infinite alternate}
+.b-img:nth-child(2){transform:translateY(20px) rotate(3deg);animation:bob 4.6s .4s ease-in-out infinite alternate}
+.b-img:nth-child(3){transform:rotate(8deg);animation:bob 5s .8s ease-in-out infinite alternate}
+@keyframes bob{to{margin-top:-14px}}
+
+/* ---------- trust strip ---------- */
+.trust{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:16px}
+.t-card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:15px 16px;display:flex;align-items:center;gap:13px;transition:.25s}
+.t-card:hover{transform:translateY(-3px);box-shadow:var(--sh);border-color:#cfd9f5}
+.t-ic{width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;background:var(--tc,#e9efff);color:var(--ti,#2a5df0);flex:none}
+.t-ic svg{width:21px;height:21px}
+.t-card b{display:block;font:800 14px var(--disp)}
+.t-card small{color:var(--mut);font-weight:600;font-size:12px}
+
+/* ---------- toolbar ---------- */
+.toolbar{display:flex;align-items:center;justify-content:space-between;gap:14px;margin:28px 0 16px;flex-wrap:wrap}
+.toolbar h2{font-family:var(--disp);font-weight:800;font-size:24px;letter-spacing:-.5px}
+.toolbar .cnt{color:var(--mut);font-weight:600;font-size:13.5px;margin-left:8px}
+.sortbox{position:relative}
+.sortbox select{appearance:none;-webkit-appearance:none;background:#fff;border:1.5px solid var(--line);border-radius:9px;padding:10px 40px 10px 14px;font:700 13.5px var(--body);color:var(--ink);cursor:pointer;transition:.2s}
+.sortbox select:hover{border-color:var(--blue)}
+.sortbox::after{content:"";position:absolute;right:14px;top:50%;width:8px;height:8px;border-right:2px solid var(--mut);border-bottom:2px solid var(--mut);transform:translateY(-70%) rotate(45deg);pointer-events:none}
+
+/* ---------- grid & cards ---------- */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:14px;padding-bottom:60px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;opacity:0;transform:translateY(20px);transition:opacity .5s ease,transform .5s ease,box-shadow .25s ease,border-color .25s}
+.card.in{opacity:1;transform:translateY(0)}
+.card.in:hover{transform:translateY(-6px);box-shadow:0 16px 34px rgba(16,26,61,.14);border-color:#cfd9f5}
+.tile{position:relative;aspect-ratio:1/1;background:#eef1f8;overflow:hidden}
+.tile img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.card:hover .tile img{transform:scale(1.07)}
+.off{position:absolute;top:10px;left:10px;background:var(--green);color:#fff;font:800 12px var(--disp);padding:4px 9px;border-radius:6px;letter-spacing:.3px;box-shadow:0 3px 8px rgba(0,0,0,.2)}
+.hot{position:absolute;bottom:10px;left:10px;background:var(--orange);color:#fff;font:800 10.5px var(--disp);letter-spacing:1.2px;padding:4px 9px;border-radius:5px;text-transform:uppercase}
+.wish{position:absolute;top:10px;right:10px;width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.94);box-shadow:0 3px 8px rgba(0,0,0,.18);display:flex;align-items:center;justify-content:center;color:#8a93ab;transition:.2s}
+.wish svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2}
+.wish:hover{transform:scale(1.12);color:var(--red)}
+.wish.on{color:var(--red)}
+.wish.on svg{fill:var(--red);stroke:var(--red)}
+.cbody{padding:13px 14px 15px;display:flex;flex-direction:column;flex:1;gap:7px}
+.pname{font-size:14px;font-weight:700;line-height:1.35;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:38px}
+.rate{display:flex;align-items:center;gap:8px}
+.rbadge{display:inline-flex;align-items:center;gap:4px;background:var(--green);color:#fff;font:800 11.5px var(--body);padding:2.5px 8px;border-radius:5px}
+.rbadge svg{width:10px;height:10px;fill:#fff}
+.rcount{color:var(--mut);font-size:12px;font-weight:600}
+.price{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.price b{font:800 19px var(--disp);letter-spacing:-.3px}
+.price s{color:var(--mut);font-size:13px}
+.price em{font-style:normal;color:var(--green);font-weight:800;font-size:13px}
+.meta{display:flex;align-items:center;gap:14px;color:var(--mut);font-size:11.5px;font-weight:700}
+.meta span{display:inline-flex;align-items:center;gap:5px}
+.meta svg{width:13px;height:13px;color:var(--green)}
+.add{margin-top:auto;display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:10px;border-radius:9px;background:linear-gradient(180deg,var(--yellow),var(--yellow-d));border:1px solid #e2a90a;color:var(--navy);font:800 13.5px var(--disp);letter-spacing:.3px;transition:.18s}
+.add svg{width:16px;height:16px}
+.add:hover{filter:brightness(1.06);transform:translateY(-1px)}
+.add:active{transform:scale(.97)}
+.empty{grid-column:1/-1;text-align:center;padding:70px 20px;color:var(--mut)}
+.empty b{display:block;font-family:var(--disp);font-size:22px;color:var(--ink);margin-top:12px}
+.empty svg{width:54px;height:54px;color:#c3cadb;margin:0 auto}
+
+/* ---------- drawer ---------- */
+.overlay{position:fixed;inset:0;background:rgba(13,20,48,.55);z-index:110;opacity:0;visibility:hidden;transition:.3s}
+.overlay.show{opacity:1;visibility:visible}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(420px,100%);background:#fff;z-index:120;transform:translateX(105%);transition:transform .35s cubic-bezier(.2,.8,.25,1);display:flex;flex-direction:column;box-shadow:-16px 0 40px rgba(16,26,61,.2)}
+.drawer.show{transform:none}
+.dhead{display:flex;align-items:center;justify-content:space-between;padding:18px 20px;border-bottom:1px solid var(--line)}
+.dhead h3{font-family:var(--disp);font-weight:800;font-size:20px}
+.dhead h3 span{color:var(--blue);font-size:14px}
+.xbtn{width:36px;height:36px;border-radius:9px;background:#f1f3f9;display:flex;align-items:center;justify-content:center;color:#4a5370;transition:.2s}
+.xbtn:hover{background:#e4e8f4;transform:rotate(90deg)}
+.xbtn svg{width:17px;height:17px}
+.ditems{flex:1;overflow-y:auto;padding:14px 20px;display:flex;flex-direction:column;gap:13px}
+.ci{display:flex;gap:13px;border:1px solid var(--line);border-radius:11px;padding:11px;animation:cin .3s ease}
+@keyframes cin{from{opacity:0;transform:translateX(20px)}}
+.ct{width:66px;height:66px;border-radius:9px;overflow:hidden;flex:none;background:#eef1f8}
+.ct img{width:100%;height:100%;object-fit:cover}
+.cm{flex:1;min-width:0;display:flex;flex-direction:column;gap:5px}
+.cn{font-size:13px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cp{font-size:14px;font-weight:800}
+.cp s{color:var(--mut);font-weight:500;font-size:12px;margin-left:6px}
+.cp em{font-style:normal;color:var(--green);font-size:12px;margin-left:6px}
+.cq{display:flex;align-items:center;justify-content:space-between;margin-top:2px}
+.step{display:flex;align-items:center;gap:2px;border:1.5px solid var(--line);border-radius:8px;overflow:hidden}
+.step button{width:27px;height:26px;display:flex;align-items:center;justify-content:center;color:#3c4560;transition:.15s}
+.step button:hover{background:#eef1f8;color:var(--blue)}
+.step button svg{width:13px;height:13px}
+.step span{min-width:26px;text-align:center;font-weight:800;font-size:13px}
+.del{display:inline-flex;align-items:center;gap:5px;color:var(--red);font:700 12px var(--body);padding:4px 7px;border-radius:6px;transition:.15s}
+.del:hover{background:#fdecec}
+.del svg{width:13px;height:13px}
+.dfoot{border-top:1px solid var(--line);padding:16px 20px 20px;background:#fbfcff}
+.drow{display:flex;justify-content:space-between;font-size:13.5px;font-weight:600;color:#4a5370;padding:4px 0}
+.drow b{color:var(--ink)}
+.drow.grn,.drow.grn b{color:var(--green)}
+.drow.free s{color:var(--mut);margin-right:6px}
+.drow.total{border-top:1px dashed #ccd3e4;margin-top:8px;padding-top:11px;font-size:16px}
+.drow.total b{font:800 19px var(--disp)}
+.btn-p{width:100%;margin-top:12px;display:flex;align-items:center;justify-content:center;gap:9px;background:linear-gradient(180deg,#3465ff,var(--blue-d));color:#fff;font:800 15px var(--disp);padding:14px;border-radius:10px;box-shadow:0 8px 20px rgba(42,93,240,.35);transition:.2s}
+.btn-p:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(42,93,240,.45)}
+.btn-p svg{width:17px;height:17px}
+.dnote{text-align:center;color:var(--mut);font-size:12px;font-weight:600;margin-top:11px}
+.dempty{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:var(--mut);padding:30px;text-align:center}
+.dempty svg{width:60px;height:60px;color:#c9d1e4}
+.dempty b{font-family:var(--disp);font-size:20px;color:var(--ink)}
+.dempty button{margin-top:8px;background:var(--navy);color:#fff;font:800 13.5px var(--disp);padding:11px 22px;border-radius:9px}
+
+/* ---------- modals ---------- */
+.modal{position:fixed;inset:0;z-index:130;display:flex;align-items:center;justify-content:center;padding:18px;background:rgba(13,20,48,.6);opacity:0;visibility:hidden;transition:.25s}
+.modal.show{opacity:1;visibility:visible}
+.box{background:#fff;border-radius:16px;width:100%;max-width:480px;max-height:92vh;overflow-y:auto;padding:26px;box-shadow:0 30px 80px rgba(0,0,0,.35);transform:translateY(24px) scale(.97);transition:.3s cubic-bezier(.2,.8,.25,1)}
+.modal.show .box{transform:none}
+.mhead{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
+.mhead h3{font-family:var(--disp);font-weight:800;font-size:22px}
+.msum{display:flex;flex-direction:column;gap:9px;max-height:180px;overflow-y:auto;border:1px solid var(--line);border-radius:11px;padding:13px;margin-bottom:16px}
+.mi{display:flex;align-items:center;gap:11px;font-size:13px}
+.mi .mt{width:38px;height:38px;border-radius:7px;overflow:hidden;flex:none;background:#eef1f8}
+.mi .mt img{width:100%;height:100%;object-fit:cover}
+.mi span{flex:1;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mi small{color:var(--mut);font-weight:700}
+.mi b{font-weight:800}
+.bill{background:#f7f9fd;border:1px solid var(--line);border-radius:11px;padding:14px 16px;margin-bottom:16px}
+.ptitle{font:800 12px var(--disp);letter-spacing:1.6px;text-transform:uppercase;color:var(--mut);margin-bottom:12px}
+.pay{display:flex;align-items:center;gap:13px;border:2px solid var(--line);border-radius:11px;padding:13px 15px;margin-bottom:10px;transition:.2s}
+.pay.sel{border-color:var(--green);background:var(--green-l)}
+.pay.dis{opacity:.5}
+.pay .pic{width:40px;height:40px;border-radius:9px;display:flex;align-items:center;justify-content:center;background:#eef2fc;color:var(--blue);flex:none}
+.pay.sel .pic{background:#fff;color:var(--green)}
+.pay .pic svg{width:20px;height:20px}
+.pay div{flex:1}
+.pay b{font-size:14px;font-weight:800;display:block}
+.pay small{color:var(--mut);font-weight:600;font-size:12px}
+.radio{width:20px;height:20px;border-radius:50%;border:2px solid #b9c1d6;flex:none;position:relative}
+.pay.sel .radio{border-color:var(--green)}
+.pay.sel .radio::after{content:"";position:absolute;inset:4px;border-radius:50%;background:var(--green)}
+.tagoff{background:#fde8de;color:var(--orange);font:800 10px var(--disp);letter-spacing:1px;padding:3px 8px;border-radius:5px;text-transform:uppercase}
+.tagok{background:var(--green-l);color:var(--green);font:800 10px var(--disp);letter-spacing:1px;padding:3px 8px;border-radius:5px;text-transform:uppercase}
+.mnote{display:flex;gap:10px;align-items:flex-start;background:#fff8e6;border:1px solid #ffe7a3;border-radius:11px;padding:12px 14px;font-size:12.5px;font-weight:600;color:#7a5b12;margin-bottom:16px}
+.mnote svg{width:17px;height:17px;color:#d99a06;flex:none;margin-top:1px}
+/* success */
+.sbox{text-align:center;padding:34px 28px}
+.chk{width:82px;height:82px;border-radius:50%;background:linear-gradient(180deg,#22b367,var(--green));margin:0 auto 18px;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 30px rgba(23,138,76,.4);animation:pop .55s cubic-bezier(.2,1.4,.4,1)}
+.chk svg{width:42px;height:42px;color:#fff}
+@keyframes pop{0%{transform:scale(0)}60%{transform:scale(1.18)}100%{transform:scale(1)}}
+.sbox h2{font-family:var(--disp);font-weight:800;font-size:26px;letter-spacing:-.5px}
+.sbox .sub{color:var(--mut);font-weight:600;font-size:14px;margin-top:6px}
+.srows{margin:20px 0;border:1.5px dashed #ccd3e4;border-radius:12px;padding:6px 18px;text-align:left}
+.srow{display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px dashed #e3e7f1;font-size:13.5px}
+.srow:last-child{border:none}
+.srow span{color:var(--mut);font-weight:700;display:flex;align-items:center;gap:8px}
+.srow span svg{width:14px;height:14px;color:var(--blue)}
+.srow b{font-weight:800;text-align:right}
+.sfun{font-size:12.5px;color:var(--mut);font-weight:600;margin-top:14px;line-height:1.6}
+/* processing */
+.proc{position:fixed;inset:0;z-index:150;background:rgba(13,20,48,.72);display:none;align-items:center;justify-content:center;flex-direction:column;gap:18px;color:#fff}
+.proc.show{display:flex}
+.spin{width:52px;height:52px;border-radius:50%;border:4px solid rgba(255,255,255,.2);border-top-color:var(--yellow);animation:rot .8s linear infinite}
+@keyframes rot{to{transform:rotate(360deg)}}
+.proc p{font:800 16px var(--disp);letter-spacing:.3px}
+
+/* ---------- toasts ---------- */
+#toasts{position:fixed;left:18px;bottom:18px;z-index:160;display:flex;flex-direction:column;gap:9px}
+.toast{display:flex;align-items:center;gap:10px;background:var(--navy);color:#fff;font:700 13.5px var(--body);padding:12px 18px;border-radius:10px;box-shadow:0 12px 30px rgba(0,0,0,.3);animation:tin .3s ease;border-left:4px solid var(--green)}
+.toast svg{width:16px;height:16px;color:#4dd38a}
+@keyframes tin{from{opacity:0;transform:translateY(14px)}}
+
+/* ---------- mobile bar ---------- */
+.mbar{position:fixed;left:0;right:0;bottom:0;z-index:100;background:linear-gradient(90deg,var(--navy),var(--navy2));color:#fff;display:none;align-items:center;justify-content:space-between;padding:13px 18px;box-shadow:0 -8px 24px rgba(16,26,61,.3);transform:translateY(110%);transition:.3s}
+.mbar.show{transform:none}
+.mbar b{font:800 18px var(--disp)}
+.mbar small{display:block;font-size:11.5px;color:#aab6e6;font-weight:700}
+.mbar button{display:flex;align-items:center;gap:8px;background:linear-gradient(180deg,var(--yellow),var(--yellow-d));color:var(--navy);font:800 14px var(--disp);padding:11px 20px;border-radius:9px}
+.mbar svg{width:16px;height:16px}
+
+/* ---------- footer ---------- */
+footer{background:var(--navy);color:#c6cfee;margin-top:20px}
+.fgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:30px;padding:44px 16px 34px;max-width:1240px;margin:0 auto}
+.fgrid h4{font-family:var(--disp);color:#fff;font-size:15px;margin-bottom:14px;letter-spacing:.3px}
+.fgrid a{display:block;color:#9aa6d6;text-decoration:none;font-size:13px;font-weight:600;padding:4.5px 0;transition:.15s}
+.fgrid a:hover{color:var(--yellow);padding-left:4px}
+.fbrand b{font-family:var(--disp);font-weight:800;font-size:26px;color:#fff}
+.fbrand b span{color:var(--yellow)}
+.fbrand p{font-size:13px;line-height:1.7;margin-top:12px;color:#9aa6d6;font-weight:500}
+.fpay{display:flex;align-items:center;gap:11px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:12px 15px;margin-top:8px}
+.fpay .pic{width:38px;height:38px;border-radius:8px;background:var(--green-l);color:var(--green);display:flex;align-items:center;justify-content:center;flex:none}
+.fpay svg{width:19px;height:19px}
+.fpay b{color:#fff;font-size:13.5px;display:block}
+.fpay small{font-size:11.5px;color:#8b97c9;font-weight:600}
+.fbot{border-top:1px solid rgba(255,255,255,.1);padding:16px;text-align:center;font-size:12.5px;color:#8b97c9;font-weight:600}
+
+/* ---------- confetti ---------- */
+.cf{position:fixed;top:-24px;z-index:200;pointer-events:none;animation:cfall linear forwards}
+@keyframes cfall{to{transform:translateY(106vh) rotate(760deg)}}
+
+/* ---------- responsive ---------- */
+@media(max-width:900px){
+  .b-imgs{display:none}
+  .trust{grid-template-columns:repeat(2,1fr)}
+  .fgrid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:700px){
+  .hrow{flex-wrap:wrap;gap:12px;padding:10px 14px}
+  .search{order:3;flex:1 0 100%;max-width:none}
+  .catbar{top:112px}
+  .banner{padding:28px 22px}
+  .grid{grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px}
+  .cbody{padding:11px 11px 12px}
+  .mbar{display:flex}
+  body{padding-bottom:64px}
+  #toasts{bottom:80px;left:12px;right:12px}
+}
+@media(max-width:480px){.trust{grid-template-columns:1fr 1fr;gap:9px}.t-card{padding:12px}.fgrid{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<!-- top offer ticker -->
+<div class="ticker"><div class="tk-track" id="ticker"></div></div>
+
+<!-- header -->
+<header>
+  <div class="hrow">
+    <a class="logo" href="#"><b>Shop<span>Kart</span></b><small>India ka apna store</small></a>
+    <div class="search">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+      <input id="q" type="text" placeholder="Products search karo — mobile, shoes, saree, headphones...">
+    </div>
+    <button class="cartbtn" onclick="openDrawer()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1.6"/><circle cx="18" cy="21" r="1.6"/><path d="M2.5 3h2l2.7 12.3a1.6 1.6 0 0 0 1.6 1.2h8.6a1.6 1.6 0 0 0 1.6-1.3L21 8H6.2"/></svg>
+      <span>Cart</span><b class="badge hide" id="badge">0</b>
+    </button>
+  </div>
+</header>
+
+<!-- categories -->
+<nav class="catbar"><div class="chips" id="catbar"></div></nav>
+
+<main class="wrap">
+  <!-- banner -->
+  <section class="banner">
+    <span class="b-tag"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z"/></svg>Mega Sale Live</span>
+    <h1>Big Bachat Days<br><em>30% – 70% OFF</em></h1>
+    <p>Har single product par guaranteed discount. Koi login nahi, koi address nahi — seedha cart me daalo aur order karo.</p>
+    <div class="b-row">
+      <div class="cd">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
+        <div><small>Sale khatam hone me</small><b id="cd">00:00:00</b></div>
+      </div>
+      <a href="#products" class="btn-y">Abhi Shop Karo
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+    <div class="b-imgs">
+      <div class="b-img"><img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=400&q=70" alt="Sneakers" onerror="imgErr(this,'Runner Shoes','#ff8fa8','#e0356b')"></div>
+      <div class="b-img"><img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=400&q=70" alt="Headphones" onerror="imgErr(this,'Headphones','#a8c4ff','#2a5df0')"></div>
+      <div class="b-img"><img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=400&q=70" alt="Watch" onerror="imgErr(this,'Smart Watch','#ffe08a','#f5a300')"></div>
+    </div>
+  </section>
+
+  <!-- trust strip -->
+  <section class="trust">
+    <div class="t-card"><div class="t-ic" style="--tc:#e7f7ee;--ti:#178a4c"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M1 6h13v11H1zM14 9h4l3 3.5V17h-7z"/><circle cx="6" cy="18.6" r="1.8"/><circle cx="17.6" cy="18.6" r="1.8"/></svg></div><div><b>Free Delivery</b><small>Har order par, bina shart</small></div></div>
+    <div class="t-card"><div class="t-ic" style="--tc:#e9efff;--ti:#2a5df0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="3"/></svg></div><div><b>Cash on Delivery</b><small>Paise tab jab saman mile</small></div></div>
+    <div class="t-card"><div class="t-ic" style="--tc:#fff3e0;--ti:#ff8a1e"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M3 9l9-6 9 6v11a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/><path d="M9 21v-8h6v8"/></svg></div><div><b>No Login Needed</b><small>Na account, na address</small></div></div>
+    <div class="t-card"><div class="t-ic" style="--tc:#fdecec;--ti:#e5484d"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M20.6 13.4l-7.2 7.2a2 2 0 0 1-2.8 0L3 13V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><circle cx="7.5" cy="7.5" r="1.6"/></svg></div><div><b>Massive Offers</b><small>30% se lekar 70% tak off</small></div></div>
+  </section>
+
+  <!-- toolbar -->
+  <div class="toolbar" id="products">
+    <h2>Best Deals <span class="cnt" id="count"></span></h2>
+    <div class="sortbox">
+      <select id="sortSel" onchange="render()">
+        <option value="pop">Sort: Popular</option>
+        <option value="plow">Price: Kam se Zyada</option>
+        <option value="phigh">Price: Zyada se Kam</option>
+        <option value="off">Discount: Sabse Zyada</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- grid -->
+  <section class="grid" id="grid"></section>
+</main>
+
+<!-- footer -->
+<footer>
+  <div class="fgrid">
+    <div class="fbrand"><b>Shop<span>Kart</span></b>
+      <p>India ka apna online shopping destination. 110+ products, sabse bade discounts, free delivery aur Cash on Delivery — sab kuch ek hi jagah par.</p>
+    </div>
+    <div><h4>Categories</h4><a href="#">Mobiles</a><a href="#">Fashion</a><a href="#">Electronics</a><a href="#">Shoes</a><a href="#">Home &amp; Kitchen</a><a href="#">Beauty</a></div>
+    <div><h4>Help</h4><a href="#">Orders</a><a href="#">Returns</a><a href="#">Offers</a><a href="#">Contact Us</a><a href="#">Track Order</a></div>
+    <div><h4>Payment Method</h4>
+      <div class="fpay"><div class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="3"/></svg></div><div><b>Cash on Delivery Only</b><small>Na card, na UPI — sirf cash</small></div></div>
+    </div>
+  </div>
+  <div class="fbot">© 2026 ShopKart India • Made with care for shopping lovers</div>
+</footer>
+
+<!-- mobile bottom bar -->
+<div class="mbar" id="mbar">
+  <div><b id="mtotal">₹0</b><small id="mcount">0 items</small></div>
+  <button onclick="openDrawer()">Cart Kholo
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+  </button>
+</div>
+
+<!-- overlays -->
+<div class="overlay" id="overlay" onclick="closeDrawer()"></div>
+
+<aside class="drawer" id="drawer">
+  <div class="dhead">
+    <h3>Aapka Cart <span id="dCount"></span></h3>
+    <button class="xbtn" onclick="closeDrawer()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+  </div>
+  <div class="ditems" id="dItems"></div>
+  <div class="dfoot" id="dFoot"></div>
+</aside>
+
+<!-- checkout modal -->
+<div class="modal" id="checkout">
+  <div class="box">
+    <div class="mhead">
+      <h3>Checkout</h3>
+      <button class="xbtn" onclick="hideModal('checkout')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+    </div>
+    <div class="msum" id="ckItems"></div>
+    <div class="bill" id="ckBill"></div>
+    <p class="ptitle">Payment Method</p>
+    <div class="pay sel">
+      <div class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="3"/></svg></div>
+      <div><b>Cash on Delivery</b><small>Saman ghar par lelo, paise tab dena</small></div>
+      <span class="tagok">Selected</span>
+      <span class="radio" style="margin-left:10px"></span>
+    </div>
+    <div class="pay dis">
+      <div class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2.5"/><path d="M12 18h.01"/></svg></div>
+      <div><b>UPI</b><small>Abhi available nahi hai</small></div>
+      <span class="tagoff">Unavailable</span>
+    </div>
+    <div class="pay dis">
+      <div class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg></div>
+      <div><b>Debit / Credit Card</b><small>Abhi available nahi hai</small></div>
+      <span class="tagoff">Unavailable</span>
+    </div>
+    <div class="mnote">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16.5h.01"/></svg>
+      Na login, na address, na OTP — bas "Order Pakka Karo" dabao aur kaam done.
+    </div>
+    <button class="btn-p" onclick="placeOrder()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+      Order Pakka Karo — COD
+    </button>
+  </div>
+</div>
+
+<!-- success modal -->
+<div class="modal" id="success">
+  <div class="box sbox">
+    <div class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+    <h2>Order Successful!</h2>
+    <p class="sub">Aapka order confirm ho gaya hai. Details niche dekho:</p>
+    <div class="srows">
+      <div class="srow"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M20.6 13.4l-7.2 7.2a2 2 0 0 1-2.8 0L3 13V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/></svg>Order ID</span><b id="sId">—</b></div>
+      <div class="srow"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="3"/></svg>COD Amount</span><b id="sAmt">—</b></div>
+      <div class="srow"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Delivery By</span><b id="sDate">—</b></div>
+      <div class="srow"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M1 6h13v11H1zM14 9h4l3 3.5V17h-7z"/><circle cx="6" cy="18.6" r="1.8"/><circle cx="17.6" cy="18.6" r="1.8"/></svg>Delivery Address</span><b>Koi nahi chahiye — bas muskurao</b></div>
+    </div>
+    <button class="btn-p" onclick="hideModal('success')">Shopping Jaari Rakho
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </button>
+    <p class="sfun">Order bilkul pakka hai — bas delivery thodi imaginary hai.<br>Delivery partner nikal chuka hai... sapno ki gaadi me.</p>
+  </div>
+</div>
+
+<!-- processing -->
+<div class="proc" id="proc"><div class="spin"></div><p>Order pakka ho raha hai...</p></div>
+
+<div id="toasts"></div>
+
+<script>
+/* ================= FALLBACK IMAGE ================= */
+function imgErr(img,name,c1,c2){
+  const ini=name.split(' ').slice(0,2).map(w=>w[0]||'').join('').toUpperCase();
+  const svg=`<svg xmlns='http://www.w3.org/2000/svg' width='640' height='640'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='${c1}'/><stop offset='1' stop-color='${c2}'/></linearGradient></defs><rect width='640' height='640' fill='url(#g)'/><text x='320' y='352' font-family='Arial' font-size='130' font-weight='bold' fill='rgba(255,255,255,.9)' text-anchor='middle'>${ini}</text></svg>`;
+  img.onerror=null; img.src='data:image/svg+xml;utf8,'+encodeURIComponent(svg);
+}
+
+/* ================= ICONS ================= */
+const IC={
+ cart:'<svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1.6"/><circle cx="18" cy="21" r="1.6"/><path d="M2.5 3h2l2.7 12.3a1.6 1.6 0 0 0 1.6 1.2h8.6a1.6 1.6 0 0 0 1.6-1.3L21 8H6.2"/></svg>',
+ star:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg>',
+ heart:'<svg viewBox="0 0 24 24"><path d="M12 21s-7.6-4.8-9.8-9.1A5.7 5.7 0 0 1 12 6.3a5.7 5.7 0 0 1 9.8 5.6C19.6 16.2 12 21 12 21z"/></svg>',
+ truck:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M1 6h13v11H1zM14 9h4l3 3.5V17h-7z"/><circle cx="6" cy="18.6" r="1.8"/><circle cx="17.6" cy="18.6" r="1.8"/></svg>',
+ cash:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="3"/></svg>',
+ plus:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>',
+ minus:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M5 12h14"/></svg>',
+ trash:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M8 6V4h8v2M6 6l1 14h10l1-14"/></svg>',
+ check:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>',
+ search:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>'
+};
+
+/* ================= DATA ================= */
+const CATS={
+ mobile:{label:'Mobiles',c:'#2a5df0',g:['#b9ccff','#4a78f2']},
+ fashion:{label:'Fashion',c:'#d63a7a',g:['#ffc3d9','#e0538f']},
+ elec:{label:'Electronics',c:'#0f8fb8',g:['#b6e7f7','#2199c4']},
+ shoes:{label:'Shoes',c:'#178a4c',g:['#bdeed2','#27a35f']},
+ home:{label:'Home & Kitchen',c:'#d97a12',g:['#ffe0b3','#e88a1f']},
+ beauty:{label:'Beauty',c:'#c2492e',g:['#ffd0c2','#d75c3d']},
+ sports:{label:'Sports',c:'#57801c',g:['#dcefbc','#6f9c2c']},
+ toys:{label:'Toys',c:'#6b3fd6',g:['#dcccff','#7d52e6']},
+ books:{label:'Books',c:'#0f7d76',g:['#bdeae7','#1a928a']},
+ grocery:{label:'Grocery',c:'#9c7a10',g:['#f7e6a8','#b3901a']}
+};
+const DATA={
+ mobile:[['Nova X5 Pro 5G',18999,'photo-1511707171634-5f897ff02aa9'],['Pixelon 8A',24999,'photo-1512941937669-90a1b58e7e9c'],['Redmax Note 14',14999,'photo-1580910051074-3eb694886505'],['Galaxy Ace 5G',21999,'photo-1592899677977-9c10ca588bbd'],['iBerry One',27999,'photo-1598327105666-5b89351aff97'],['Volt P3 Power',12999,'photo-1510557880182-3d4d3cba3515'],['Zephyr Lite',10999,'photo-1585060544812-6b45742d762f'],['Orion 5G Max',16999,'photo-1565849904461-04a58ad377e0'],['Pearl S2',9499,'photo-1567581935884-3349723552ca'],['Titan X Gaming Phone',34999,'photo-1574944985070-8f3ebc6b79d2'],['Blu G60',13499,'photo-1556656793-08538906a9f8'],['Nova Fold Mini',49999,'photo-1601784551446-20c9e07cdbdb']],
+ fashion:[['Classic Denim Jacket',2199,'photo-1551028719-00167b16eac5'],['Slim Fit Blue Jeans',1599,'photo-1542272604-787c3835535d'],['Oversized Graphic Tee',799,'photo-1521572163474-6864f9cf17ab'],['Plain White Tee Combo',999,'photo-1576566588028-4147f3842f27'],['Floral Summer Dress',1899,'photo-1595777457583-95e059d581b8'],['Elegant Party Gown',2499,'photo-1515372039744-b8f02a3ae446'],['Mens Formal Shirt',1299,'photo-1520975954732-35dd22299614'],['Womens White Shirt',1399,'photo-1596755094514-f87e34085b2c'],['Winter Casual Hoodie',1499,'photo-1556821840-3a63f95609a7'],['Ethnic Silk Saree',2499,'photo-1583391733956-6c78276477e2'],['Fashion Style Combo',3499,'photo-1483985988355-763728e1935b'],['Wardrobe Essentials Pack',2999,'photo-1441984904996-e0b6ba687e04']],
+ elec:[['Bass Pro Headphones',2999,'photo-1505740420928-5e560c06d30e'],['TWS Earbuds X2',1999,'photo-1590658268037-6bf12165a8df'],['AirDots Lite',1499,'photo-1606220945770-b5b6c2c55bf1'],['Wireless Over-Ear Set',2499,'photo-1583394838336-acd977736f90'],['Studio White Headset',3499,'photo-1546435770-a3e426bf472b'],['UltraBook Air 14',54999,'photo-1593642632823-8f785ba67e45'],['ProBook 15 Laptop',46999,'photo-1496181133206-80ce9b88a853'],['SlimBook Pro Laptop',64999,'photo-1517336714731-489689fd1ca8'],['RGB Mechanical Keyboard',2299,'photo-1587829741301-dc798b83add3'],['Wireless Gaming Mouse',999,'photo-1527864550417-7fd91fc51a46'],['Smartwatch Fit S',3499,'photo-1579586337278-3befd40fd17a'],['43 inch 4K Smart TV',27999,'photo-1593305841991-05c297ba4575']],
+ shoes:[['Runner Pro Sneakers',2499,'photo-1542291026-7eec264c27ff'],['Street Classic Sneakers',1999,'photo-1549298916-b41d501d3772'],['White Court Shoes',1799,'photo-1595950653106-6c9ebd614d3a'],['Urban Flex Sneakers',2299,'photo-1600185365483-26d7a4cc7519'],['Minimal White Kicks',1499,'photo-1560769629-975ec94e6a86'],['Retro Jogger Shoes',1899,'photo-1491553895911-0055eca6402d'],['Canvas Low-Top Shoes',1299,'photo-1525966222134-fcfa9975288f'],['Red Classic Slip-Ons',999,'photo-1606107557195-0e29a4b5b4aa'],['Chelsea Leather Boots',3299,'photo-1543163521-1bf539c55dd2'],['Party Heels For Women',1799,'photo-1520639888713-7851133b1ed0'],['All-Black Runners',2199,'photo-1529810313688-44ea1c2d81d3'],['Casual Canvas Lace-Ups',1099,'photo-1465453869711-7e174808ace9']],
+ home:[['Nonstick Cookware Set',2999,'photo-1556911220-bff31c812dba'],['Modular Kitchen Combo',9999,'photo-1484154218962-a197022b5858'],['Kitchen Essentials Kit',1999,'photo-1556909114-f6e7ad7d3136'],['King Size Bedsheet',1299,'photo-1505693416388-ac5ce068fe85'],['3 Seater Fabric Sofa',24999,'photo-1586023492125-27b2c045efd7'],['Comfort Couch Grey',21999,'photo-1555041469-a586c61ea9bc'],['Armchair With Lamp',8999,'photo-1493663284031-b7e3aefcae8e'],['LED Table Lamp',799,'photo-1507473885765-e6ed057f782c'],['Living Room Decor Set',2499,'photo-1522708323590-d24dbb6b0267'],['Wooden Coffee Table',6999,'photo-1524758631624-e2822e304c36'],['Kitchen Utensil Set',1499,'photo-1563861826100-9cb868fdbe1c'],['Electric Kettle 1.5L',999,'photo-1584100936595-c0654b55a2e2']],
+ beauty:[['Vitamin C Glow Serum',799,'photo-1556228720-195a672e8a03'],['Pro Makeup Brush Set',1299,'photo-1522335789203-aabd1fc54bc9'],['Cosmetic Gift Box',1499,'photo-1512496015851-a90fb38ba796'],['Skincare Routine Kit',999,'photo-1571781926291-c477ebfd024b'],['Luxury Perfume Noir',1799,'photo-1541643600914-78b084683601'],['Makeup Palette Deluxe',1099,'photo-1596462502278-27bfdc403348'],['Beauty Combo Pack',899,'photo-1598440947619-2c35fc9aa908'],['Cosmetic Essentials',749,'photo-1526947425960-945c6e72858f'],['Face Care Serum Duo',999,'photo-1608248543803-ba4f8c70ae0b'],['Natural Glow Cream',599,'photo-1620916566398-39f1143ab7be']],
+ sports:[['English Willow Cricket Bat',3999,'photo-1531415074968-036ba1b575da'],['Pro Football Size 5',999,'photo-1575361204480-aadea25e6e68'],['Football Training Kit',1499,'photo-1579952363873-27f3bade9f55'],['Premium Yoga Mat 8mm',899,'photo-1544367567-0f2fcb009e0b'],['Yoga Wellness Set',1299,'photo-1506126613408-eca07ce68773'],['Dumbbell Pair 5kg',1499,'photo-1558618666-fcd25c85cd64'],['Home Gym Bench Kit',4999,'photo-1517836357463-d25dfeac3438'],['Running Sport Shoes',2499,'photo-1461896836934-ffe607ba8211'],['Cycling Essentials Kit',1999,'photo-1517649763962-0c623066013b'],['Fitness Combo Pack',1799,'photo-1541534741688-6078c6bfb5c5']],
+ toys:[['RC Racing Car',1499,'photo-1545558014-8692077e9b5c'],['Building Blocks 500pc',1999,'photo-1596461404969-9ae70f2830c1'],['Giant Teddy Bear',999,'photo-1559715541-5daf8a0296d0'],['Smart Robot Toy',1299,'photo-1519689680058-324335c77eba'],['Kids Toy Combo Box',1599,'photo-1515488042361-ee00e0ddd4e4'],['Art And Craft Kit',899,'photo-1456735190827-d1262f71b8a3'],['Train Track Set',1799,'photo-1587654780291-39c9404d746b'],['Doll House Deluxe',2499,'photo-1503454537195-1dcabb73ffb9'],['Family Puzzle 1000pc',799,'photo-1560852274-1d17b0f9b0b0'],['Mini Camera Drone',3999,'photo-1473968512647-3e447244af8f']],
+ books:[['Atomic Habits Hindi',599,'photo-1544947950-fa07a98d237f'],['The Psychology of Money',499,'photo-1512820790803-83ca734da794'],['Ikigai Bestseller',399,'photo-1543002588-bfa74002ed7e'],['Reading Bundle 5 Books',1499,'photo-1497633762265-9d179a990aa6'],['Wings of Fire',499,'photo-1495446815901-a7297e633e8d'],['Study Notes Collection',799,'photo-1481627834876-b7833e8f5570'],['Classic Library Set',2999,'photo-1507842217343-583bb7270b66'],['Bedtime Stories Combo',699,'photo-1524578271613-d550eacf6090'],['Coffee Table Book',1299,'photo-1456513080510-7bf3a84b82f8'],['Self Growth Bundle',999,'photo-1519682337058-a94d519337bc']],
+ grocery:[['Organic Grocery Basket',999,'photo-1542838132-92c53300491e'],['Fresh Salad Mix',399,'photo-1512621776951-a57141f2eefd'],['Seasonal Fruit Box',699,'photo-1506976785307-8732e854ad03'],['Premium Coffee Beans 1kg',1299,'photo-1447933601403-0c6688de566e'],['Filter Coffee Blend 500g',749,'photo-1552346154-21d32810aba3'],['Whole Wheat Bread Pack',299,'photo-1509440159596-0249088772ff'],['Dry Fruits Box 1kg',1299,'photo-1615485290382-441e4d049cb5'],['Organic Honey 500g',449,'photo-1587049352846-4a222e784d38'],['Masala Combo Pack',599,'photo-1596040033229-a9821ebd058d'],['Chocolate Hamper',999,'photo-1599599810769-bcde5a160d32']]
+};
+
+/* ---- build product list ---- */
+function rnd(s){const x=Math.sin(s)*10000;return x-Math.floor(x);}
+const P=[];let pid=0;
+for(const cat in DATA){DATA[cat].forEach((it,i)=>{
+  const d=30+Math.floor(rnd(pid*7+3)*41);            /* 30% – 70% */
+  const price=Math.round(it[1]*(100-d)/100);
+  P.push({id:pid,cat,name:it[0],mrp:it[1],ph:it[2],off:d,price,
+    rate:(3.8+rnd(pid*13+1)*1.1).toFixed(1),
+    rc:Math.floor(rnd(pid*31+5)*40000+500),
+    hot:rnd(pid*17+9)>0.86});
+  pid++;
+});}
+const U=(ph,w)=>`https://images.unsplash.com/${ph}?auto=format&fit=crop&w=${w}&q=70`;
+const RS=n=>n.toLocaleString('en-IN');
+const $=id=>document.getElementById(id);
+
+/* ================= STATE ================= */
+let cart={},q='',cat='all';
+
+/* ================= TICKER ================= */
+(function(){
+  const items=['Mega Sale Live','30% se 70% tak OFF','Free Delivery har order par','Cash on Delivery available','No Login • No OTP • Seedha Order','110+ Products Best Prices'];
+  const half=items.map(t=>`<span><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z"/></svg>${t}</span>`).join('');
+  $('ticker').innerHTML=half+half;
+})();
+
+/* ================= CATEGORY CHIPS ================= */
+(function(){
+  let h=`<button class="chip on" data-c="all" onclick="setCat('all',this)"><span class="dot" style="--c:#101a3d"></span>All Products</button>`;
+  for(const k in CATS)h+=`<button class="chip" data-c="${k}" onclick="setCat('${k}',this)"><span class="dot" style="--c:${CATS[k].c}"></span>${CATS[k].label}</button>`;
+  $('catbar').innerHTML=h;
+})();
+function setCat(c,el){cat=c;document.querySelectorAll('.chip').forEach(x=>x.classList.remove('on'));el.classList.add('on');render();$('products').scrollIntoView({behavior:'smooth',block:'start'});}
+
+/* ================= RENDER GRID ================= */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.05});
+function watchCards(){
+  document.querySelectorAll('.card:not(.in)').forEach((el,i)=>{
+    el.style.transitionDelay=Math.min(i%8,8)*45+'ms';
+    io.observe(el);
+    setTimeout(()=>el.style.transitionDelay='',1400);
+  });
+}
+function card(p){
+  const g=CATS[p.cat].g;
+  return `<article class="card">
+    <div class="tile">
+      <img src="${U(p.ph,500)}" alt="${p.name}" loading="lazy" onerror="imgErr(this,'${p.name}','${g[0]}','${g[1]}')">
+      <span class="off">${p.off}% OFF</span>
+      ${p.hot?'<span class="hot">Hot Deal</span>':''}
+      <button class="wish" onclick="this.classList.toggle('on')" aria-label="wishlist">${IC.heart}</button>
+    </div>
+    <div class="cbody">
+      <h4 class="pname">${p.name}</h4>
+      <div class="rate"><span class="rbadge">${IC.star}${p.rate}</span><span class="rcount">${RS(p.rc)} ratings</span></div>
+      <div class="price"><b>₹${RS(p.price)}</b><s>₹${RS(p.mrp)}</s><em>${p.off}% off</em></div>
+      <div class="meta"><span>${IC.truck}Free Delivery</span><span>${IC.cash}COD</span></div>
+      <button class="add" onclick="add(${p.id})">${IC.cart}Cart Me Daalo</button>
+    </div>
+  </article>`;
+}
+function render(){
+  const s=$('sortSel').value;
+  let list=P.filter(p=>(cat==='all'||p.cat===cat)&&(p.name.toLowerCase().includes(q)||CATS[p.cat].label.toLowerCase().includes(q)));
+  if(s==='plow')list=[...list].sort((a,b)=>a.price-b.price);
+  if(s==='phigh')list=[...list].sort((a,b)=>b.price-a.price);
+  if(s==='off')list=[...list].sort((a,b)=>b.off-a.off);
+  $('count').textContent='('+list.length+' items)';
+  $('grid').innerHTML=list.length?list.map(card).join('')
+    :`<div class="empty">${IC.search}<b>Kuch nahi mila</b>Dusra keyword try karo</div>`;
+  watchCards();
+}
+
+/* ================= CART ================= */
+function totals(){let n=0,m=0,p=0;for(const id in cart){const it=P[id];n+=cart[id];m+=it.mrp*cart[id];p+=it.price*cart[id];}return{n,m,p};}
+function updateBadge(){
+  const t=totals(),b=$('badge'),mb=$('mbar');
+  b.textContent=t.n;b.classList.toggle('hide',t.n===0);
+  b.classList.remove('pop');void b.offsetWidth;b.classList.add('pop');
+  $('mtotal').textContent='₹'+RS(t.p);
+  $('mcount').textContent=t.n+' item'+(t.n>1?'s':'')+' • COD only';
+  mb.classList.toggle('show',t.n>0);
+}
+function add(id){cart[id]=(cart[id]||0)+1;updateBadge();renderDrawer();toast('Cart me add ho gaya');}
+function changeQty(id,act){
+  if(act==='inc')cart[id]++;
+  if(act==='dec'){cart[id]--;if(cart[id]<1)delete cart[id];}
+  if(act==='del')delete cart[id];
+  updateBadge();renderDrawer();
+}
+function renderDrawer(){
+  const t=totals(),box=$('dItems'),foot=$('dFoot');
+  $('dCount').textContent=t.n?('('+t.n+' items)'):'';
+  if(!t.n){
+    box.innerHTML=`<div class="dempty">${IC.cart}<b>Cart khaali hai</b><span>Best deals aapka intezaar kar rahi hain</span><button onclick="closeDrawer()">Shopping Shuru Karo</button></div>`;
+    foot.innerHTML='';return;
+  }
+  box.innerHTML=Object.keys(cart).map(id=>{const p=P[id],g=CATS[p.cat].g;return `
+    <div class="ci">
+      <div class="ct"><img src="${U(p.ph,160)}" alt="${p.name}" onerror="imgErr(this,'${p.name}','${g[0]}','${g[1]}')"></div>
+      <div class="cm">
+        <div class="cn">${p.name}</div>
+        <div class="cp">₹${RS(p.price)}<s>₹${RS(p.mrp)}</s><em>${p.off}% off</em></div>
+        <div class="cq">
+          <div class="step">
+            <button onclick="changeQty(${p.id},'dec')" aria-label="kam karo">${IC.minus}</button><span>${cart[id]}</span>
+            <button onclick="changeQty(${p.id},'inc')" aria-label="badhao">${IC.plus}</button>
+          </div>
+          <button class="del" onclick="changeQty(${p.id},'del')">${IC.trash}Hatao</button>
+        </div>
+      </div>
+    </div>`;}).join('');
+  foot.innerHTML=`
+    <div class="drow grn"><span>Aapki Total Bachat</span><b>₹${RS(t.m-t.p)}</b></div>
+    <div class="drow"><span>Item Total</span><b>₹${RS(t.p)}</b></div>
+    <div class="drow free"><span>Delivery</span><b><s>₹99</s>FREE</b></div>
+    <div class="drow total"><span>Pay Karne Par</span><b>₹${RS(t.p)}</b></div>
+    <button class="btn-p" onclick="openCheckout()">${IC.cash}Order Karo — Cash on Delivery</button>
+    <p class="dnote">No Login • No Address • Sirf ek click me order</p>`;
+}
+
+/* ================= DRAWER / MODALS ================= */
+function lock(v){document.body.classList.toggle('lock',v);}
+function openDrawer(){renderDrawer();$('drawer').classList.add('show');$('overlay').classList.add('show');lock(true);}
+function closeDrawer(){$('drawer').classList.remove('show');$('overlay').classList.remove('show');lock(false);}
+function openCheckout(){
+  const t=totals();if(!t.n)return;
+  closeDrawer();
+  $('ckItems').innerHTML=Object.keys(cart).map(id=>{const p=P[id],g=CATS[p.cat].g;return `
+    <div class="mi"><div class="mt"><img src="${U(p.ph,100)}" alt="${p.name}" onerror="imgErr(this,'${p.name}','${g[0]}','${g[1]}')"></div>
+    <span>${p.name}</span><small>x ${cart[id]}</small><b>₹${RS(p.price*cart[id])}</b></div>`;}).join('');
+  $('ckBill').innerHTML=`
+    <div class="drow"><span>Price (${t.n} items)</span><b>₹${RS(t.m)}</b></div>
+    <div class="drow grn"><span>Discount</span><b>− ₹${RS(t.m-t.p)}</b></div>
+    <div class="drow free"><span>Delivery Charges</span><b><s>₹99</s>FREE</b></div>
+    <div class="drow total"><span>Total Payable</span><b>₹${RS(t.p)}</b></div>`;
+  $('checkout').classList.add('show');lock(true);
+}
+function hideModal(id){$(id).classList.remove('show');lock(false);}
+function placeOrder(){
+  hideModal('checkout');
+  $('proc').classList.add('show');
+  setTimeout(()=>{
+    $('proc').classList.remove('show');
+    const t=totals();
+    $('sId').textContent='SK-'+Math.random().toString(36).slice(2,8).toUpperCase();
+    $('sAmt').textContent='₹'+RS(t.p)+' (Cash on Delivery)';
+    $('sDate').textContent=new Date(Date.now()+4*864e5).toLocaleDateString('en-IN',{weekday:'short',day:'numeric',month:'short'});
+    cart={};updateBadge();renderDrawer();
+    $('success').classList.add('show');lock(true);
+    confetti();
+  },1600);
+}
+
+/* ================= CONFETTI ================= */
+function confetti(){
+  const cols=['#ffd23f','#ff6b2c','#178a4c','#2a5df0','#7aa5ff','#ffffff'];
+  for(let i=0;i<130;i++){
+    const p=document.createElement('i');p.className='cf';
+    p.style.cssText=`left:${Math.random()*100}vw;background:${cols[i%cols.length]};width:${6+Math.random()*7}px;height:${8+Math.random()*8}px;border-radius:${Math.random()>.5?'50%':'2px'};animation-duration:${2.4+Math.random()*1.8}s;animation-delay:${Math.random()*.5}s`;
+    document.body.appendChild(p);setTimeout(()=>p.remove(),4800);
+  }
+}
+
+/* ================= TOAST ================= */
+function toast(msg){
+  const t=document.createElement('div');t.className='toast';
+  t.innerHTML=IC.check+msg;
+  $('toasts').appendChild(t);
+  setTimeout(()=>{t.style.opacity='0';t.style.transition='.3s';setTimeout(()=>t.remove(),300);},2200);
+}
+
+/* ================= COUNTDOWN ================= */
+function tick(){
+  const now=new Date(),end=new Date();end.setHours(24,0,0,0);
+  let s=Math.max(0,Math.floor((end-now)/1000));
+  const h=String(Math.floor(s/3600)).padStart(2,'0'),m=String(Math.floor(s%3600/60)).padStart(2,'0'),sec=String(s%60).padStart(2,'0');
+  $('cd').textContent=`${h}:${m}:${sec}`;
+}
+setInterval(tick,1000);tick();
+
+/* ================= EVENTS ================= */
+$('q').addEventListener('input',e=>{q=e.target.value.trim().toLowerCase();render();});
+$('dItems').addEventListener('click',e=>{/* handled via inline onclick */});
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape'){
+    if($('proc').classList.contains('show'))return;
+    hideModal('checkout');hideModal('success');closeDrawer();
+  }
+});
+
+/* init */
+render();updateBadge();
+</script>
+</body>
+</html>

