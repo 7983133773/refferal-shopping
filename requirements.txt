@@ -1,0 +1,9 @@
+Flask
+Werkzeug
+pyTelegramBotAPI
+requests
+urllib3
+Pillow
+qrcode
+weasyprint
+python-dotenv
