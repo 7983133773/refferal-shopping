@@ -1,0 +1,2601 @@
+{
+  "settings": {
+    "maintenance": false,
+    "referral_credits": 2,
+    "discount_rate": 0,
+    "command_tokens": {
+      "camera": 5,
+      "audio": 5,
+      "location": 5,
+      "live_location": 5,
+      "num_info": 5,
+      "family_info": 5,
+      "call_history": 150,
+      "gallery": 200
+    },
+    "feature_public": {
+      "camera": true,
+      "audio": true,
+      "location": true,
+      "live_location": true,
+      "num_info": true,
+      "family_info": false,
+      "call_history": true,
+      "gallery": true
+    },
+    "ad_bot": null,
+    "custom_buttons": []
+  },
+  "users": {
+    "7758917200": {
+      "tokens": 20,
+      "plan": "free",
+      "expiry": null,
+      "username": "@GOD_AYUSH",
+      "name": "𝐀ʏᴜꜱʜ",
+      "history": [
+        {
+          "action": "admin_add_all",
+          "amount": 20,
+          "time": "2026-11-03 13:01:00"
+        }
+      ],
+      "referred_by": null,
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-02 07:08:45"
+    },
+    "5245923008": {
+      "tokens": 0,
+      "plan": "free",
+      "expiry": null,
+      "username": "N/A",
+      "name": "Praveen",
+      "history": [],
+      "referred_by": null,
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-14 02:16:56"
+    },
+    "8291937664": {
+      "tokens": 0,
+      "plan": "free",
+      "expiry": null,
+      "username": "@AnjanParinda_1",
+      "name": "Anjan Parinda",
+      "history": [],
+      "referred_by": null,
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-14 02:17:46"
+    },
+    "8385972027": {
+      "tokens": 0,
+      "plan": "free",
+      "expiry": null,
+      "username": "N/A",
+      "name": "dr.",
+      "history": [],
+      "referred_by": null,
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-14 02:23:32"
+    },
+    "8349634823": {
+      "tokens": 0,
+      "plan": "free",
+      "expiry": null,
+      "username": "@llYT_HUNTER_99999ll",
+      "name": "•||𝐃𝐀𝐑𝐊 𝖝 𝐒𝐇𝐀𝐃𝐎𝐖||• ⌯ ˹𝐏ɴs〆 - 𐩃ᴘ˼",
+      "history": [],
+      "referred_by": null,
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-14 02:25:52"
+    },
+    "8879120730": {
+      "tokens": 82,
+      "plan": "free",
+      "expiry": null,
+      "username": "@Subaruhuyrr",
+      "name": "𝐒𝐔𝐁𝐀𝐑𝐔 𝐇𝐔 𝐘𝐑𝐑",
+      "history": [
+        {
+          "action": "admin_add",
+          "amount": 100,
+          "time": "2026-11-03 15:55:48"
+        },
+        {
+          "action": "media_use",
+          "amount": -1,
+          "time": "2026-11-03 15:56:11"
+        },
+        {
+          "action": "media_use",
+          "amount": -1,
+          "time": "2026-11-03 16:05:53"
+        },
+        {
+          "action": "media_use",
+          "amount": -1,
+          "time": "2026-11-03 16:06:00"
+        },
+        {
+          "action": "media_use",
+          "amount": -1,
+          "time": "2026-11-03 16:12:49"
+        },
+        {
+          "action": "media_use",
+          "amount": -1,
+          "time": "2026-11-03 16:20:58"
+        },
+        {
+          "action": "media_use",
+          "amount": -1,
+          "time": "2026-11-03 16:34:09"
+        },
+        {
+          "action": "media_use",
+          "amount": -1,
+          "time": "2026-11-03 16:37:13"
+        },
+        {
+          "action": "media_use",
+          "amount": -1,
+          "time": "2026-11-04 03:11:03"
+        },
+        {
+          "action": "media_use",
+          "amount": -1,
+          "time": "2026-11-04 03:12:21"
+        },
+        {
+          "action": "media_use",
+          "amount": -1,
+          "time": "2026-11-04 10:47:51"
+        },
+        {
+          "action": "media_use",
+          "amount": -1,
+          "time": "2026-11-04 10:47:51"
+        },
+        {
+          "action": "media_use",
+          "amount": -1,
+          "time": "2026-11-04 15:00:54"
+        },
+        {
+          "action": "media_use",
+          "amount": -1,
+          "time": "2026-11-04 15:04:31"
+        },
+        {
+          "action": "media_use",
+          "amount": -1,
+          "time": "2026-11-04 15:26:27"
+        },
+        {
+          "action": "media_use",
+          "amount": -1,
+          "time": "2026-11-04 15:33:11"
+        },
+        {
+          "action": "media_use",
+          "amount": -1,
+          "time": "2026-11-04 15:37:30"
+        },
+        {
+          "action": "media_use",
+          "amount": -1,
+          "time": "2026-11-04 15:37:42"
+        },
+        {
+          "action": "media_use",
+          "amount": -1,
+          "time": "2026-11-04 15:57:26"
+        }
+      ],
+      "referred_by": null,
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-03 15:52:23"
+    },
+    "8070523943": {
+      "tokens": 0,
+      "plan": "free",
+      "expiry": null,
+      "username": "@King_14333333",
+      "name": "⏤ͥ ꯭͓ᷟ☠ ⃪꯭𝐃𝐇𝐎𝐊𝐄𝐁𝐀𝐀𝐉⟶᯦꯭꯭꯭🖤꯭|ا⁩꯭",
+      "history": [],
+      "referred_by": null,
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-14 02:38:54"
+    },
+    "8736844712": {
+      "tokens": 0,
+      "plan": "free",
+      "expiry": null,
+      "username": "@Samay176",
+      "name": "ZORUUU",
+      "history": [],
+      "referred_by": null,
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-14 02:46:31"
+    },
+    "6401154780": {
+      "tokens": 19,
+      "plan": "free",
+      "expiry": null,
+      "username": "@iMSASUKES8i",
+      "name": "ＩＭ 𖣘︎ ＥＲＥＮ",
+      "history": [
+        {
+          "action": "referral_bonus",
+          "amount": 2,
+          "time": "2026-11-03 10:32:42"
+        },
+        {
+          "action": "media_use",
+          "amount": -1,
+          "time": "2026-11-03 10:41:13"
+        },
+        {
+          "action": "admin_add_all",
+          "amount": 20,
+          "time": "2026-11-03 13:01:00"
+        },
+        {
+          "action": "referral_bonus",
+          "amount": 2,
+          "time": "2026-11-05 15:38:36"
+        },
+        {
+          "action": "media_use",
+          "amount": -1,
+          "time": "2026-11-05 16:02:43"
+        },
+        {
+          "action": "media_use",
+          "amount": -1,
+          "time": "2026-11-05 16:04:00"
+        },
+        {
+          "action": "media_use",
+          "amount": -1,
+          "time": "2026-11-05 16:08:41"
+        },
+        {
+          "action": "media_use",
+          "amount": -1,
+          "time": "2026-11-05 16:12:02"
+        }
+      ],
+      "referred_by": null,
+      "referrals": [
+        "8703428398",
+        "8816681282"
+      ],
+      "banned": false,
+      "joined": "2026-11-02 13:29:11"
+    },
+    "8986461324": {
+      "tokens": 0,
+      "plan": "free",
+      "expiry": null,
+      "username": "@AnishGupta08",
+      "name": "Anuj",
+      "history": [],
+      "referred_by": null,
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-14 02:51:03"
+    },
+    "8611613363": {
+      "tokens": 20,
+      "plan": "unlimited",
+      "expiry": "2026-12-02 11:38:04",
+      "username": "@SHURU_33",
+      "name": "𓆩☠𓆪 𝖘𝖍𝖆𝖒_1908 𓆪☠𓆩",
+      "history": [
+        {
+          "action": "admin_setvip_30d",
+          "amount": 0,
+          "time": "2026-11-02 11:38:04"
+        },
+        {
+          "action": "admin_add_all",
+          "amount": 20,
+          "time": "2026-11-03 13:01:00"
+        }
+      ],
+      "referred_by": null,
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-02 07:52:23"
+    },
+    "6899180574": {
+      "tokens": 0,
+      "plan": "free",
+      "expiry": null,
+      "username": "N/A",
+      "name": "Anonymous",
+      "history": [],
+      "referred_by": null,
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-14 08:43:33"
+    },
+    "8994907976": {
+      "tokens": 0,
+      "plan": "free",
+      "expiry": null,
+      "username": "@LORDXGOD7",
+      "name": "𝐊ꫝʀᴛɪ፝֟ᴋㅤᥫ᭡፝֟፝֟",
+      "history": [],
+      "referred_by": null,
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-14 13:02:48"
+    },
+    "5652347927": {
+      "tokens": 0,
+      "plan": "free",
+      "expiry": null,
+      "username": "@Mikeldahiya",
+      "name": "Mikel",
+      "history": [
+        {
+          "action": "referred_bonus",
+          "amount": 2,
+          "time": "2026-11-06 04:58:28"
+        },
+        {
+          "action": "media_use",
+          "amount": -1,
+          "time": "2026-11-06 04:58:54"
+        },
+        {
+          "action": "media_use",
+          "amount": -1,
+          "time": "2026-11-06 05:03:06"
+        }
+      ],
+      "referred_by": "8901908036",
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-06 04:58:28"
+    },
+    "8959878185": {
+      "tokens": 0,
+      "plan": "free",
+      "expiry": null,
+      "username": "@one00100_1",
+      "name": "one00100",
+      "history": [],
+      "referred_by": null,
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-04 07:03:05"
+    },
+    "6094376171": {
+      "tokens": 0,
+      "plan": "free",
+      "expiry": null,
+      "username": "N/A",
+      "name": "UK",
+      "history": [],
+      "referred_by": null,
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-15 12:55:00"
+    },
+    "7032148553": {
+      "tokens": 20,
+      "plan": "free",
+      "expiry": null,
+      "username": "N/A",
+      "name": "Carding seller",
+      "history": [
+        {
+          "action": "admin_add_all",
+          "amount": 20,
+          "time": "2026-11-03 13:01:00"
+        }
+      ],
+      "referred_by": null,
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-02 08:19:28"
+    },
+    "7693681684": {
+      "tokens": 0,
+      "plan": "free",
+      "expiry": null,
+      "username": "@Yashgotrare",
+      "name": "ᎷʜㅤƳꫝsʜㅤᥫ᭡",
+      "history": [],
+      "referred_by": null,
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-15 14:51:36"
+    },
+    "8703428398": {
+      "tokens": 16,
+      "plan": "free",
+      "expiry": null,
+      "username": "@rajveerjakhar0",
+      "name": "Rajveer",
+      "history": [
+        {
+          "action": "referred_bonus",
+          "amount": 2,
+          "time": "2026-11-03 10:32:42"
+        },
+        {
+          "action": "media_use",
+          "amount": -1,
+          "time": "2026-11-03 10:33:41"
+        },
+        {
+          "action": "admin_add_all",
+          "amount": 20,
+          "time": "2026-11-03 13:01:00"
+        },
+        {
+          "action": "media_use",
+          "amount": -1,
+          "time": "2026-11-03 17:14:29"
+        },
+        {
+          "action": "media_use",
+          "amount": -1,
+          "time": "2026-11-04 04:25:55"
+        },
+        {
+          "action": "media_use",
+          "amount": -1,
+          "time": "2026-11-04 07:53:41"
+        },
+        {
+          "action": "media_use",
+          "amount": -1,
+          "time": "2026-11-04 13:31:54"
+        },
+        {
+          "action": "media_use",
+          "amount": -1,
+          "time": "2026-11-04 17:56:09"
+        }
+      ],
+      "referred_by": "6401154780",
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-03 10:32:42"
+    },
+    "7605546583": {
+      "tokens": 2,
+      "plan": "free",
+      "expiry": null,
+      "username": "@Radhikkaa11",
+      "name": "Radhika",
+      "history": [
+        {
+          "action": "referred_bonus",
+          "amount": 2,
+          "time": "2026-11-04 07:10:24"
+        }
+      ],
+      "referred_by": "7895651878",
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-04 07:10:24"
+    },
+    "8768377365": {
+      "tokens": 2,
+      "plan": "free",
+      "expiry": null,
+      "username": "@MONSTER00213",
+      "name": "MONSTER",
+      "history": [
+        {
+          "action": "referred_bonus",
+          "amount": 2,
+          "time": "2026-11-04 07:11:40"
+        }
+      ],
+      "referred_by": "7895651878",
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-04 07:11:40"
+    },
+    "8645308220": {
+      "tokens": 0,
+      "plan": "free",
+      "expiry": null,
+      "username": "@Cyber_exploits",
+      "name": "Cyber hackz",
+      "history": [],
+      "referred_by": null,
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-16 02:32:16"
+    },
+    "6320167759": {
+      "tokens": 0,
+      "plan": "free",
+      "expiry": null,
+      "username": "@Rahul_0679",
+      "name": "𝐑𝐀𝐇𝐔𝐋ㅤㅤㅤ",
+      "history": [],
+      "referred_by": null,
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-16 02:38:29"
+    },
+    "8634531020": {
+      "tokens": 0,
+      "plan": "free",
+      "expiry": null,
+      "username": "N/A",
+      "name": "Raghuveer",
+      "history": [
+        {
+          "action": "referral_bonus",
+          "amount": 2,
+          "time": "2026-11-16 02:47:11"
+        },
+        {
+          "action": "referral_bonus",
+          "amount": 2,
+          "time": "2026-11-16 02:48:32"
+        },
+        {
+          "action": "referral_bonus",
+          "amount": 2,
+          "time": "2026-11-16 08:11:05"
+        },
+        {
+          "action": "use_live_location",
+          "amount": -5,
+          "time": "2026-11-16 08:11:40"
+        },
+        {
+          "action": "full_payload_hit",
+          "amount": -1,
+          "time": "2026-11-16 08:12:08"
+        }
+      ],
+      "referred_by": null,
+      "referrals": [
+        "845468913",
+        "8974364614",
+        "9114895340"
+      ],
+      "banned": false,
+      "joined": "2026-11-16 02:42:27"
+    },
+    "845468913": {
+      "tokens": 2,
+      "plan": "free",
+      "expiry": null,
+      "username": "@Alexhackz09",
+      "name": "Alex",
+      "history": [
+        {
+          "action": "referred_bonus",
+          "amount": 2,
+          "time": "2026-11-16 02:47:11"
+        }
+      ],
+      "referred_by": "8634531020",
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-16 02:47:10"
+    },
+    "8974364614": {
+      "tokens": 2,
+      "plan": "free",
+      "expiry": null,
+      "username": "N/A",
+      "name": "Alex",
+      "history": [
+        {
+          "action": "referred_bonus",
+          "amount": 2,
+          "time": "2026-11-16 02:48:32"
+        }
+      ],
+      "referred_by": "8634531020",
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-16 02:48:32"
+    },
+    "8725703259": {
+      "tokens": 0,
+      "plan": "free",
+      "expiry": null,
+      "username": "@Hithereokk",
+      "name": "Vector",
+      "history": [],
+      "referred_by": null,
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-16 02:51:27"
+    },
+    "7001697608": {
+      "tokens": 0,
+      "plan": "free",
+      "expiry": null,
+      "username": "N/A",
+      "name": "𝗠𝗚𝗣",
+      "history": [],
+      "referred_by": null,
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-16 02:58:41"
+    },
+    "7960854459": {
+      "tokens": 0,
+      "plan": "free",
+      "expiry": null,
+      "username": "N/A",
+      "name": ".",
+      "history": [],
+      "referred_by": null,
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-16 03:37:20"
+    },
+    "8968334396": {
+      "tokens": 0,
+      "plan": "free",
+      "expiry": null,
+      "username": "N/A",
+      "name": "꧁𝐃𝐀𝐑𝐊 ꭙ‌‌ 𝐎𝐒𝐈𝐍𝐓 ༒H₳CKER꧂",
+      "history": [],
+      "referred_by": null,
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-16 04:02:46"
+    },
+    "6877438123": {
+      "tokens": 0,
+      "plan": "free",
+      "expiry": null,
+      "username": "@azmain444",
+      "name": "Azmain",
+      "history": [],
+      "referred_by": null,
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-16 07:35:38"
+    },
+    "9114895340": {
+      "tokens": 2,
+      "plan": "free",
+      "expiry": null,
+      "username": "N/A",
+      "name": "Rathod",
+      "history": [
+        {
+          "action": "referred_bonus",
+          "amount": 2,
+          "time": "2026-11-16 08:11:05"
+        }
+      ],
+      "referred_by": "8634531020",
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-16 08:11:05"
+    },
+    "8952263102": {
+      "tokens": 0,
+      "plan": "free",
+      "expiry": null,
+      "username": "N/A",
+      "name": "✨⃝ 𝐋 𝐄 𝐕 𝐈 ツ⚡ Ｄ Ａ Ｄ Ｄ Ｙ乂➹",
+      "history": [],
+      "referred_by": null,
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-16 10:51:07"
+    },
+    "8600255759": {
+      "tokens": 0,
+      "plan": "free",
+      "expiry": null,
+      "username": "@FlyoverAura",
+      "name": "ㅤ⏤͟͟͞͞𝐒𝐡𝐞𝐫𝐥𝐨𝐱 </>",
+      "history": [],
+      "referred_by": null,
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-16 12:40:52"
+    },
+    "8399386315": {
+      "tokens": 20,
+      "plan": "free",
+      "expiry": null,
+      "username": "@shubxicp",
+      "name": "JK YPC",
+      "history": [
+        {
+          "action": "admin_add_all",
+          "amount": 20,
+          "time": "2026-11-03 13:01:00"
+        }
+      ],
+      "referred_by": null,
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-02 07:09:11"
+    },
+    "7817632774": {
+      "tokens": 20,
+      "plan": "free",
+      "expiry": null,
+      "username": "@data_selling_005",
+      "name": "Data selling agent",
+      "history": [
+        {
+          "action": "admin_add_all",
+          "amount": 20,
+          "time": "2026-11-03 13:01:00"
+        }
+      ],
+      "referred_by": null,
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-02 07:10:25"
+    },
+    "8826868113": {
+      "tokens": 20,
+      "plan": "free",
+      "expiry": null,
+      "username": "N/A",
+      "name": "Shiva",
+      "history": [
+        {
+          "action": "admin_add_all",
+          "amount": 20,
+          "time": "2026-11-03 13:01:00"
+        }
+      ],
+      "referred_by": null,
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-02 07:11:22"
+    },
+    "6190167181": {
+      "tokens": 22,
+      "plan": "free",
+      "expiry": null,
+      "username": "N/A",
+      "name": "꧁༒۝😎🔥 𝓑𝓐𝓑𝓐 𝓣𝓘𝓛𝓤 😎۝༒꧂ ▄︻┻═┳一",
+      "history": [
+        {
+          "action": "referral_bonus",
+          "amount": 2,
+          "time": "2026-11-02 07:27:44"
+        },
+        {
+          "action": "admin_add_all",
+          "amount": 20,
+          "time": "2026-11-03 13:01:00"
+        }
+      ],
+      "referred_by": null,
+      "referrals": [
+        "6247144111"
+      ],
+      "banned": false,
+      "joined": "2026-11-02 07:12:23"
+    },
+    "6398818603": {
+      "tokens": 19,
+      "plan": "free",
+      "expiry": null,
+      "username": "@SourceX_OSINT",
+      "name": "𝕆𝕓𝕚𝕥𝕠_ 𝕌𝕔𝕙𝕚𝕙𝕒_",
+      "history": [
+        {
+          "action": "admin_add_all",
+          "amount": 20,
+          "time": "2026-11-03 13:01:00"
+        },
+        {
+          "action": "media_use",
+          "amount": -1,
+          "time": "2026-11-03 13:06:50"
+        }
+      ],
+      "referred_by": null,
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-02 07:16:54"
+    },
+    "9032147665": {
+      "tokens": 20,
+      "plan": "free",
+      "expiry": null,
+      "username": "@CYBERBOY345",
+      "name": "CYBER",
+      "history": [
+        {
+          "action": "admin_add_all",
+          "amount": 20,
+          "time": "2026-11-03 13:01:00"
+        }
+      ],
+      "referred_by": null,
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-02 07:17:07"
+    },
+    "6247144111": {
+      "tokens": 22,
+      "plan": "free",
+      "expiry": null,
+      "username": "@Tfyfdkk",
+      "name": ". ꯭🦅꯭᪵𝆆̄⏤꯭꯭𖬲𝐌꯭𝐀꯭𝐍𝐈꯭𝐒𝐇꯭💸꯭ᰮ͝🝐꯭\"꯭﹅︭.",
+      "history": [
+        {
+          "action": "referred_bonus",
+          "amount": 2,
+          "time": "2026-11-02 07:27:44"
+        },
+        {
+          "action": "admin_add_all",
+          "amount": 20,
+          "time": "2026-11-03 13:01:00"
+        }
+      ],
+      "referred_by": "6190167181",
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-02 07:27:44"
+    },
+    "8742785274": {
+      "tokens": 20,
+      "plan": "free",
+      "expiry": null,
+      "username": "@Cyber_Arman09",
+      "name": "Cyber_Arman",
+      "history": [
+        {
+          "action": "admin_add_all",
+          "amount": 20,
+          "time": "2026-11-03 13:01:00"
+        }
+      ],
+      "referred_by": null,
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-02 07:30:12"
+    },
+    "7799866548": {
+      "tokens": 20,
+      "plan": "free",
+      "expiry": null,
+      "username": "@No_love_13_x",
+      "name": "𓄂 ⃪͙ͥͥ͢ ᷟ🅷🅰🅲🅺🆁➛꯭ꪳꪲꔷ",
+      "history": [
+        {
+          "action": "admin_add_all",
+          "amount": 20,
+          "time": "2026-11-03 13:01:00"
+        }
+      ],
+      "referred_by": null,
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-02 07:30:44"
+    },
+    "8850074290": {
+      "tokens": 20,
+      "plan": "free",
+      "expiry": null,
+      "username": "@Akelapans",
+      "name": "🖤",
+      "history": [
+        {
+          "action": "admin_add_all",
+          "amount": 20,
+          "time": "2026-11-03 13:01:00"
+        }
+      ],
+      "referred_by": null,
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-02 07:34:49"
+    },
+    "8751018791": {
+      "tokens": 20,
+      "plan": "free",
+      "expiry": null,
+      "username": "@SUR3SH07",
+      "name": "SURESHOT 🏆",
+      "history": [
+        {
+          "action": "admin_add_all",
+          "amount": 20,
+          "time": "2026-11-03 13:01:00"
+        }
+      ],
+      "referred_by": null,
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-02 07:57:32"
+    },
+    "6009846276": {
+      "tokens": 20,
+      "plan": "free",
+      "expiry": null,
+      "username": "@Fireflyws",
+      "name": "KL Rahul",
+      "history": [
+        {
+          "action": "admin_add_all",
+          "amount": 20,
+          "time": "2026-11-03 13:01:00"
+        }
+      ],
+      "referred_by": null,
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-02 07:59:12"
+    },
+    "7083255457": {
+      "tokens": 20,
+      "plan": "free",
+      "expiry": null,
+      "username": "@Magnetoict",
+      "name": "Magneto ICT ⚡",
+      "history": [
+        {
+          "action": "admin_add_all",
+          "amount": 20,
+          "time": "2026-11-03 13:01:00"
+        }
+      ],
+      "referred_by": null,
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-02 08:12:35"
+    },
+    "8769965268": {
+      "tokens": 20,
+      "plan": "free",
+      "expiry": null,
+      "username": "@HACKERXWHITE",
+      "name": "HARSHITXSAKSHI",
+      "history": [
+        {
+          "action": "admin_add_all",
+          "amount": 20,
+          "time": "2026-11-03 13:01:00"
+        }
+      ],
+      "referred_by": null,
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-02 08:21:49"
+    },
+    "8388103192": {
+      "tokens": 20,
+      "plan": "free",
+      "expiry": null,
+      "username": "N/A",
+      "name": "꯱ׁׅ֒℘ꪱׁׅժׁׅ݊ꫀׁׅܻᨮ꫶ׁׅ֮",
+      "history": [
+        {
+          "action": "admin_add_all",
+          "amount": 20,
+          "time": "2026-11-03 13:01:00"
+        }
+      ],
+      "referred_by": null,
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-02 08:46:29"
+    },
+    "6268131639": {
+      "tokens": 20,
+      "plan": "free",
+      "expiry": null,
+      "username": "@Devil5898",
+      "name": ".",
+      "history": [
+        {
+          "action": "purchase_09FB957874",
+          "amount": 10,
+          "time": "2026-11-02 11:19:36"
+        },
+        {
+          "action": "media_use",
+          "amount": -1,
+          "time": "2026-11-02 11:27:27"
+        },
+        {
+          "action": "media_use",
+          "amount": -1,
+          "time": "2026-11-02 11:57:48"
+        },
+        {
+          "action": "admin_deduct",
+          "amount": -5,
+          "time": "2026-11-02 11:59:26"
+        },
+        {
+          "action": "admin_deduct",
+          "amount": -3,
+          "time": "2026-11-02 12:00:08"
+        },
+        {
+          "action": "admin_add_all",
+          "amount": 20,
+          "time": "2026-11-03 13:01:00"
+        }
+      ],
+      "referred_by": null,
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-02 09:49:49"
+    },
+    "8233790836": {
+      "tokens": 20,
+      "plan": "free",
+      "expiry": null,
+      "username": "@vgseller1",
+      "name": "Chaudhary Vishal",
+      "history": [
+        {
+          "action": "admin_add_all",
+          "amount": 20,
+          "time": "2026-11-03 13:01:00"
+        }
+      ],
+      "referred_by": null,
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-02 10:19:08"
+    },
+    "8437336127": {
+      "tokens": 19,
+      "plan": "free",
+      "expiry": null,
+      "username": "N/A",
+      "name": "Kat",
+      "history": [
+        {
+          "action": "admin_add_all",
+          "amount": 20,
+          "time": "2026-11-03 13:01:00"
+        },
+        {
+          "action": "media_use",
+          "amount": -1,
+          "time": "2026-11-06 04:36:58"
+        }
+      ],
+      "referred_by": null,
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-02 10:19:53"
+    },
+    "6919943679": {
+      "tokens": 20,
+      "plan": "free",
+      "expiry": null,
+      "username": "@Meoww_i",
+      "name": "Himanshu",
+      "history": [
+        {
+          "action": "admin_add_all",
+          "amount": 20,
+          "time": "2026-11-03 13:01:00"
+        }
+      ],
+      "referred_by": null,
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-02 10:59:01"
+    },
+    "8839546514": {
+      "tokens": 20,
+      "plan": "free",
+      "expiry": null,
+      "username": "@Shubham990003",
+      "name": "Prodx",
+      "history": [
+        {
+          "action": "admin_add_all",
+          "amount": 20,
+          "time": "2026-11-03 13:01:00"
+        }
+      ],
+      "referred_by": null,
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-02 10:59:30"
+    },
+    "8262385712": {
+      "tokens": 20,
+      "plan": "unlimited",
+      "expiry": "2026-11-05 11:18:52",
+      "username": "@TheHacker078",
+      "name": "The Hacker",
+      "history": [
+        {
+          "action": "purchase_vip_C0B2C23973",
+          "amount": 0,
+          "time": "2026-11-02 11:18:52"
+        },
+        {
+          "action": "admin_add_all",
+          "amount": 20,
+          "time": "2026-11-03 13:01:00"
+        }
+      ],
+      "referred_by": null,
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-02 11:01:33"
+    },
+    "8302676695": {
+      "tokens": 20,
+      "plan": "free",
+      "expiry": null,
+      "username": "N/A",
+      "name": "Dharmik",
+      "history": [
+        {
+          "action": "admin_add_all",
+          "amount": 20,
+          "time": "2026-11-03 13:01:00"
+        }
+      ],
+      "referred_by": null,
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-02 11:09:08"
+    },
+    "5722947735": {
+      "tokens": 20,
+      "plan": "free",
+      "expiry": null,
+      "username": "@GodXnl",
+      "name": "dynne",
+      "history": [
+        {
+          "action": "admin_add_all",
+          "amount": 20,
+          "time": "2026-11-03 13:01:00"
+        }
+      ],
+      "referred_by": null,
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-02 11:23:45"
+    },
+    "8848507635": {
+      "tokens": 20,
+      "plan": "free",
+      "expiry": null,
+      "username": "@Its_real_aditya",
+      "name": "Aditya",
+      "history": [
+        {
+          "action": "admin_add_all",
+          "amount": 20,
+          "time": "2026-11-03 13:01:00"
+        }
+      ],
+      "referred_by": null,
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-02 11:47:05"
+    },
+    "8891280972": {
+      "tokens": 20,
+      "plan": "free",
+      "expiry": null,
+      "username": "@toxic9160",
+      "name": "𝐓𝐎𝐗𝐈𝐂🫯",
+      "history": [
+        {
+          "action": "admin_add_all",
+          "amount": 20,
+          "time": "2026-11-03 13:01:00"
+        }
+      ],
+      "referred_by": null,
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-02 11:57:36"
+    },
+    "7063146195": {
+      "tokens": 20,
+      "plan": "free",
+      "expiry": null,
+      "username": "@mr_heaven0",
+      "name": "Heaven",
+      "history": [
+        {
+          "action": "admin_add_all",
+          "amount": 20,
+          "time": "2026-11-03 13:01:00"
+        }
+      ],
+      "referred_by": null,
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-02 12:01:57"
+    },
+    "8772498370": {
+      "tokens": 20,
+      "plan": "unlimited",
+      "expiry": "2026-11-28 12:14:06",
+      "username": "@lilwizkhalifa",
+      "name": "WRLD ~",
+      "history": [
+        {
+          "action": "admin_setvip_26d",
+          "amount": 0,
+          "time": "2026-11-02 12:14:06"
+        },
+        {
+          "action": "admin_add_all",
+          "amount": 20,
+          "time": "2026-11-03 13:01:00"
+        }
+      ],
+      "referred_by": null,
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-02 12:10:26"
+    },
+    "1304541954": {
+      "tokens": 20,
+      "plan": "free",
+      "expiry": null,
+      "username": "N/A",
+      "name": "NOBIII i",
+      "history": [
+        {
+          "action": "admin_add_all",
+          "amount": 20,
+          "time": "2026-11-03 13:01:00"
+        }
+      ],
+      "referred_by": null,
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-02 12:47:47"
+    },
+    "8647398020": {
+      "tokens": 20,
+      "plan": "unlimited",
+      "expiry": "2026-11-09 13:11:34",
+      "username": "N/A",
+      "name": "Veni , Vedi , Vici",
+      "history": [
+        {
+          "action": "redeem_vip_7d",
+          "amount": 0,
+          "time": "2026-11-02 13:11:34"
+        },
+        {
+          "action": "admin_add_all",
+          "amount": 20,
+          "time": "2026-11-03 13:01:00"
+        }
+      ],
+      "referred_by": null,
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-02 13:11:16"
+    },
+    "8395292942": {
+      "tokens": 20,
+      "plan": "free",
+      "expiry": null,
+      "username": "@Zoroovip",
+      "name": "Zoro",
+      "history": [
+        {
+          "action": "admin_add_all",
+          "amount": 20,
+          "time": "2026-11-03 13:01:00"
+        }
+      ],
+      "referred_by": null,
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-02 13:54:14"
+    },
+    "8789112128": {
+      "tokens": 20,
+      "plan": "unlimited",
+      "expiry": "2026-12-02 16:26:42",
+      "username": "@TurbotelLOVER",
+      "name": "Aʟᴘʜᴀ Nᴏɪʀ",
+      "history": [
+        {
+          "action": "purchase_vip_B4FB37B6CB",
+          "amount": 0,
+          "time": "2026-11-02 16:26:42"
+        },
+        {
+          "action": "admin_add_all",
+          "amount": 20,
+          "time": "2026-11-03 13:01:00"
+        }
+      ],
+      "referred_by": null,
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-02 15:52:43"
+    },
+    "5227528438": {
+      "tokens": 18,
+      "plan": "free",
+      "expiry": null,
+      "username": "@Tu_tee_main",
+      "name": "ਤੂੰ ਤੇ ਮੈਂ🫀🕊️🩷",
+      "history": [
+        {
+          "action": "admin_add_all",
+          "amount": 20,
+          "time": "2026-11-03 13:01:00"
+        },
+        {
+          "action": "media_use",
+          "amount": -1,
+          "time": "2026-11-05 11:17:11"
+        },
+        {
+          "action": "media_use",
+          "amount": -1,
+          "time": "2026-11-05 11:17:12"
+        }
+      ],
+      "referred_by": null,
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-02 16:02:59"
+    },
+    "8828403157": {
+      "tokens": 20,
+      "plan": "free",
+      "expiry": null,
+      "username": "@SADXTOM",
+      "name": "愛┋Tʘ⁠M ❤️‍🩹",
+      "history": [
+        {
+          "action": "admin_add_all",
+          "amount": 20,
+          "time": "2026-11-03 13:01:00"
+        }
+      ],
+      "referred_by": null,
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-02 16:44:18"
+    },
+    "1736380352": {
+      "tokens": 20,
+      "plan": "free",
+      "expiry": null,
+      "username": "@muklesur8027",
+      "name": "Muklesur",
+      "history": [
+        {
+          "action": "admin_add_all",
+          "amount": 20,
+          "time": "2026-11-03 13:01:00"
+        }
+      ],
+      "referred_by": null,
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-02 17:51:14"
+    },
+    "6158836385": {
+      "tokens": 20,
+      "plan": "free",
+      "expiry": null,
+      "username": "@ASURPAPA",
+      "name": "𝘼𝙎𝙐𝙍",
+      "history": [
+        {
+          "action": "admin_add_all",
+          "amount": 20,
+          "time": "2026-11-03 13:01:00"
+        }
+      ],
+      "referred_by": null,
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-02 18:28:48"
+    },
+    "8874080745": {
+      "tokens": 20,
+      "plan": "free",
+      "expiry": null,
+      "username": "@ANON_Y_M_O_U_S",
+      "name": "ANONIMOUS",
+      "history": [
+        {
+          "action": "admin_add_all",
+          "amount": 20,
+          "time": "2026-11-03 13:01:00"
+        }
+      ],
+      "referred_by": null,
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-02 20:58:22"
+    },
+    "8674362992": {
+      "tokens": 20,
+      "plan": "free",
+      "expiry": null,
+      "username": "@KINGFFAIAK47x",
+      "name": "SᴜʟᴛᴀɴメA N S H 亗",
+      "history": [
+        {
+          "action": "admin_add_all",
+          "amount": 20,
+          "time": "2026-11-03 13:01:00"
+        }
+      ],
+      "referred_by": null,
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-03 04:11:24"
+    },
+    "8191058238": {
+      "tokens": 20,
+      "plan": "free",
+      "expiry": null,
+      "username": "@Srk_team108",
+      "name": "🦋⃟ᴠͥɪͣᴘͫ⃝🇲r 𝕜𝕚𝕟𝕘𝄟⃝",
+      "history": [
+        {
+          "action": "admin_add_all",
+          "amount": 20,
+          "time": "2026-11-03 13:01:00"
+        }
+      ],
+      "referred_by": null,
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-03 06:15:06"
+    },
+    "8860353769": {
+      "tokens": 20,
+      "plan": "free",
+      "expiry": null,
+      "username": "@Fiznuba",
+      "name": "LUNA ASSISTANT",
+      "history": [
+        {
+          "action": "admin_add_all",
+          "amount": 20,
+          "time": "2026-11-03 13:01:00"
+        }
+      ],
+      "referred_by": null,
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-03 08:44:29"
+    },
+    "1880535069": {
+      "tokens": 21,
+      "plan": "free",
+      "expiry": null,
+      "username": "@Branded_Seller",
+      "name": "❲⳺𝙏𝙀𝘼𝙈⳻❳╾࿂𝙄𝘾𝘾▣╼⟔⟐ Rexy™⟐⟓࿂⟮#𝙄𝘾𝙎⟯-🇮🇳᪣",
+      "history": [
+        {
+          "action": "referral_bonus",
+          "amount": 2,
+          "time": "2026-11-03 09:49:41"
+        },
+        {
+          "action": "media_use",
+          "amount": -1,
+          "time": "2026-11-03 09:50:03"
+        },
+        {
+          "action": "admin_add_all",
+          "amount": 20,
+          "time": "2026-11-03 13:01:00"
+        }
+      ],
+      "referred_by": null,
+      "referrals": [
+        "1795866689"
+      ],
+      "banned": false,
+      "joined": "2026-11-03 09:49:32"
+    },
+    "1795866689": {
+      "tokens": 22,
+      "plan": "free",
+      "expiry": null,
+      "username": "@Masterdoxxx",
+      "name": "Vinay",
+      "history": [
+        {
+          "action": "referred_bonus",
+          "amount": 2,
+          "time": "2026-11-03 09:49:41"
+        },
+        {
+          "action": "admin_add_all",
+          "amount": 20,
+          "time": "2026-11-03 13:01:00"
+        }
+      ],
+      "referred_by": "1880535069",
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-03 09:49:41"
+    },
+    "8819490103": {
+      "tokens": 20,
+      "plan": "free",
+      "expiry": null,
+      "username": "@delusionalsahil",
+      "name": "Sahil",
+      "history": [
+        {
+          "action": "admin_add_all",
+          "amount": 20,
+          "time": "2026-11-03 13:01:00"
+        }
+      ],
+      "referred_by": null,
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-03 10:22:29"
+    },
+    "7971384834": {
+      "tokens": 19,
+      "plan": "free",
+      "expiry": null,
+      "username": "@Spidey026",
+      "name": "Spidey ⚡",
+      "history": [
+        {
+          "action": "admin_add_all",
+          "amount": 20,
+          "time": "2026-11-03 13:01:00"
+        },
+        {
+          "action": "media_use",
+          "amount": -1,
+          "time": "2026-11-03 20:01:59"
+        }
+      ],
+      "referred_by": null,
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-03 11:14:07"
+    },
+    "7522915488": {
+      "tokens": 20,
+      "plan": "free",
+      "expiry": null,
+      "username": "@Ftpikachu",
+      "name": "ᏢɪᴋꫝᴄʜᴜㅤSᴛʏ 乂",
+      "history": [
+        {
+          "action": "admin_add_all",
+          "amount": 20,
+          "time": "2026-11-03 13:01:00"
+        }
+      ],
+      "referred_by": null,
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-03 11:59:09"
+    },
+    "5741117328": {
+      "tokens": 20,
+      "plan": "free",
+      "expiry": null,
+      "username": "@Stubborn_003",
+      "name": "STUBBORN🍅",
+      "history": [
+        {
+          "action": "admin_add_all",
+          "amount": 20,
+          "time": "2026-11-03 13:01:00"
+        }
+      ],
+      "referred_by": null,
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-03 12:02:15"
+    },
+    "8431371735": {
+      "tokens": 19,
+      "plan": "free",
+      "expiry": null,
+      "username": "N/A",
+      "name": "brawo",
+      "history": [
+        {
+          "action": "admin_add_all",
+          "amount": 20,
+          "time": "2026-11-03 13:01:00"
+        },
+        {
+          "action": "media_use",
+          "amount": -1,
+          "time": "2026-11-03 13:03:01"
+        }
+      ],
+      "referred_by": null,
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-03 12:27:10"
+    },
+    "8902332992": {
+      "tokens": 0,
+      "plan": "free",
+      "expiry": null,
+      "username": "@Usammzone",
+      "name": "Abhay",
+      "history": [
+        {
+          "action": "referral_bonus",
+          "amount": 2,
+          "time": "2026-11-03 14:06:07"
+        },
+        {
+          "action": "media_use",
+          "amount": -1,
+          "time": "2026-11-03 14:06:24"
+        },
+        {
+          "action": "media_use",
+          "amount": -1,
+          "time": "2026-11-03 14:07:25"
+        }
+      ],
+      "referred_by": null,
+      "referrals": [
+        "6969251494"
+      ],
+      "banned": false,
+      "joined": "2026-11-03 14:05:02"
+    },
+    "6969251494": {
+      "tokens": 2,
+      "plan": "free",
+      "expiry": null,
+      "username": "@Amritaaura",
+      "name": "𐌀𐌌𐌓𐌉𐌕𐌀",
+      "history": [
+        {
+          "action": "referred_bonus",
+          "amount": 2,
+          "time": "2026-11-03 14:06:07"
+        }
+      ],
+      "referred_by": "8902332992",
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-03 14:06:07"
+    },
+    "7962067701": {
+      "tokens": 0,
+      "plan": "free",
+      "expiry": null,
+      "username": "@Reddihh",
+      "name": "𝙁𝙇𝘼𝙈𝙀 ❤️‍🔥",
+      "history": [],
+      "referred_by": null,
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-03 14:21:36"
+    },
+    "8483636323": {
+      "tokens": 0,
+      "plan": "free",
+      "expiry": null,
+      "username": "@Raftaars_donn",
+      "name": "Yogi",
+      "history": [],
+      "referred_by": null,
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-03 15:02:37"
+    },
+    "8962435325": {
+      "tokens": 0,
+      "plan": "free",
+      "expiry": null,
+      "username": "@l_NOVA_X_PRIME_l",
+      "name": ": ꦿ᭄🎐༒ 𝚴𝚵𝚾𐌵𝚺 •°• 𝚴𝚯𝐕𝚲 ༒🪽🎐᭄ꦿ",
+      "history": [],
+      "referred_by": null,
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-03 15:12:34"
+    },
+    "8927565803": {
+      "tokens": 0,
+      "plan": "free",
+      "expiry": null,
+      "username": "@Primexcz",
+      "name": "Prime eXe",
+      "history": [],
+      "referred_by": null,
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-03 15:14:14"
+    },
+    "8899174389": {
+      "tokens": 0,
+      "plan": "free",
+      "expiry": null,
+      "username": "@Denji_049",
+      "name": "Iᴀᴍ Dᴇɴᴊɪ",
+      "history": [],
+      "referred_by": null,
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-03 17:56:53"
+    },
+    "5067378151": {
+      "tokens": 0,
+      "plan": "free",
+      "expiry": null,
+      "username": "N/A",
+      "name": "Hey!",
+      "history": [],
+      "referred_by": null,
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-03 18:04:00"
+    },
+    "8682643145": {
+      "tokens": 0,
+      "plan": "free",
+      "expiry": null,
+      "username": "N/A",
+      "name": "♪",
+      "history": [],
+      "referred_by": null,
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-03 19:55:29"
+    },
+    "7537244690": {
+      "tokens": 0,
+      "plan": "free",
+      "expiry": null,
+      "username": "@Abhirajjj8",
+      "name": "Abhiraj",
+      "history": [],
+      "referred_by": null,
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-04 01:30:05"
+    },
+    "8670538456": {
+      "tokens": 0,
+      "plan": "free",
+      "expiry": null,
+      "username": "@itzjust_abhi",
+      "name": "Itzjust_abhi",
+      "history": [],
+      "referred_by": null,
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-04 02:18:13"
+    },
+    "1049914028": {
+      "tokens": 0,
+      "plan": "free",
+      "expiry": null,
+      "username": "@TONYPAPA",
+      "name": "TONY",
+      "history": [],
+      "referred_by": null,
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-04 04:52:12"
+    },
+    "8808564336": {
+      "tokens": 0,
+      "plan": "free",
+      "expiry": null,
+      "username": "@ZNX_ZEROX",
+      "name": "ZEROX",
+      "history": [],
+      "referred_by": null,
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-04 07:04:27"
+    },
+    "7895651878": {
+      "tokens": 14,
+      "plan": "free",
+      "expiry": null,
+      "username": "@Tinachoudhaaryy36",
+      "name": "Tina",
+      "history": [
+        {
+          "action": "referral_bonus",
+          "amount": 2,
+          "time": "2026-11-04 07:09:07"
+        },
+        {
+          "action": "referral_bonus",
+          "amount": 2,
+          "time": "2026-11-04 07:09:47"
+        },
+        {
+          "action": "referral_bonus",
+          "amount": 2,
+          "time": "2026-11-04 07:10:08"
+        },
+        {
+          "action": "referral_bonus",
+          "amount": 2,
+          "time": "2026-11-04 07:10:24"
+        },
+        {
+          "action": "referral_bonus",
+          "amount": 2,
+          "time": "2026-11-04 07:11:12"
+        },
+        {
+          "action": "referral_bonus",
+          "amount": 2,
+          "time": "2026-11-04 07:11:26"
+        },
+        {
+          "action": "referral_bonus",
+          "amount": 2,
+          "time": "2026-11-04 07:11:40"
+        }
+      ],
+      "referred_by": null,
+      "referrals": [
+        "6377246730",
+        "7615009332",
+        "8625919831",
+        "7605546583",
+        "7092499802",
+        "8758680360",
+        "8768377365"
+      ],
+      "banned": false,
+      "joined": "2026-11-04 07:07:04"
+    },
+    "6377246730": {
+      "tokens": 2,
+      "plan": "free",
+      "expiry": null,
+      "username": "@professor1457",
+      "name": "𝕻𝖗𝖔𝖋𝖊𝖘𝖘𝖔𝖗",
+      "history": [
+        {
+          "action": "referred_bonus",
+          "amount": 2,
+          "time": "2026-11-04 07:09:07"
+        }
+      ],
+      "referred_by": "7895651878",
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-04 07:09:07"
+    },
+    "7615009332": {
+      "tokens": 2,
+      "plan": "free",
+      "expiry": null,
+      "username": "N/A",
+      "name": "Narayan",
+      "history": [
+        {
+          "action": "referred_bonus",
+          "amount": 2,
+          "time": "2026-11-04 07:09:47"
+        }
+      ],
+      "referred_by": "7895651878",
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-04 07:09:47"
+    },
+    "8625919831": {
+      "tokens": 2,
+      "plan": "free",
+      "expiry": null,
+      "username": "@Khusshiiiiiiiiii",
+      "name": "Khushi",
+      "history": [
+        {
+          "action": "referred_bonus",
+          "amount": 2,
+          "time": "2026-11-04 07:10:08"
+        }
+      ],
+      "referred_by": "7895651878",
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-04 07:10:08"
+    },
+    "7092499802": {
+      "tokens": 2,
+      "plan": "free",
+      "expiry": null,
+      "username": "@Denier00",
+      "name": "Denier",
+      "history": [
+        {
+          "action": "referred_bonus",
+          "amount": 2,
+          "time": "2026-11-04 07:11:12"
+        }
+      ],
+      "referred_by": "7895651878",
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-04 07:11:12"
+    },
+    "8758680360": {
+      "tokens": 2,
+      "plan": "free",
+      "expiry": null,
+      "username": "@Piterrr07",
+      "name": "Victorrrrr",
+      "history": [
+        {
+          "action": "referred_bonus",
+          "amount": 2,
+          "time": "2026-11-04 07:11:26"
+        }
+      ],
+      "referred_by": "7895651878",
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-04 07:11:26"
+    },
+    "7201893742": {
+      "tokens": 0,
+      "plan": "free",
+      "expiry": null,
+      "username": "@M_JITENDRA",
+      "name": "𝐉 𝐈 𝐓 𝐄 𝐍 𝐃 𝐑 𝐀 𝐱 𝐎 𝐖 𝐍 𝐄 𝐑",
+      "history": [],
+      "referred_by": null,
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-04 09:09:32"
+    },
+    "6076950048": {
+      "tokens": 0,
+      "plan": "free",
+      "expiry": null,
+      "username": "@Earnersz",
+      "name": "Earnersz",
+      "history": [],
+      "referred_by": null,
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-04 09:55:55"
+    },
+    "7693439673": {
+      "tokens": 0,
+      "plan": "free",
+      "expiry": null,
+      "username": "@owner7867",
+      "name": "𝗨𝗡𝗞𝗡𝗢𝗪𝗡",
+      "history": [],
+      "referred_by": null,
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-04 10:30:46"
+    },
+    "6340080083": {
+      "tokens": 0,
+      "plan": "free",
+      "expiry": null,
+      "username": "@Professional_mr_sameer_p",
+      "name": "Professional_mr.sameer.p",
+      "history": [],
+      "referred_by": null,
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-04 11:27:57"
+    },
+    "8290024855": {
+      "tokens": 0,
+      "plan": "free",
+      "expiry": null,
+      "username": "@sana0965",
+      "name": "Sana",
+      "history": [],
+      "referred_by": null,
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-04 12:35:41"
+    },
+    "7736971134": {
+      "tokens": 0,
+      "plan": "free",
+      "expiry": null,
+      "username": "@Cyb3rRoot",
+      "name": "Cʏʙᴇʀ.exe </> 𝙳ᴇᴠ",
+      "history": [],
+      "referred_by": null,
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-04 12:36:35"
+    },
+    "8557430763": {
+      "tokens": 0,
+      "plan": "free",
+      "expiry": null,
+      "username": "N/A",
+      "name": "Deleted account",
+      "history": [],
+      "referred_by": null,
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-04 13:18:00"
+    },
+    "7696566897": {
+      "tokens": 0,
+      "plan": "free",
+      "expiry": null,
+      "username": "N/A",
+      "name": "𝐏乂𝐋",
+      "history": [],
+      "referred_by": null,
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-04 13:49:48"
+    },
+    "8677447459": {
+      "tokens": 0,
+      "plan": "free",
+      "expiry": null,
+      "username": "@x_TRACEOWNER",
+      "name": "⚡𝙓_𝙏𝙍𝘼𝘾𝙀𝙊𝙒𝙉𝙀𝙍⚡",
+      "history": [],
+      "referred_by": null,
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-04 16:44:27"
+    },
+    "8816681282": {
+      "tokens": 0,
+      "plan": "free",
+      "expiry": null,
+      "username": "@Nightmare_of_2nd_genration",
+      "name": "𒆜 𝑮𝑼𝑵 YAMAZAKI $AWB",
+      "history": [
+        {
+          "action": "referred_bonus",
+          "amount": 2,
+          "time": "2026-11-05 15:38:36"
+        },
+        {
+          "action": "media_use",
+          "amount": -1,
+          "time": "2026-11-05 15:38:49"
+        },
+        {
+          "action": "media_use",
+          "amount": -1,
+          "time": "2026-11-05 15:39:08"
+        }
+      ],
+      "referred_by": "6401154780",
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-05 15:38:36"
+    },
+    "8754602767": {
+      "tokens": 0,
+      "plan": "free",
+      "expiry": null,
+      "username": "@SilentSmile01",
+      "name": "×͜× 𝑆ɪʟᴇɴᴛ〆𝑆ᴍɪʟᴇ ×͜×",
+      "history": [],
+      "referred_by": null,
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-05 22:35:40"
+    },
+    "6715360194": {
+      "tokens": 0,
+      "plan": "free",
+      "expiry": null,
+      "username": "@Brijesh_21",
+      "name": "BRIJESH",
+      "history": [],
+      "referred_by": null,
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-06 04:05:56"
+    },
+    "8901908036": {
+      "tokens": 2,
+      "plan": "free",
+      "expiry": null,
+      "username": "N/A",
+      "name": "Baljeet",
+      "history": [
+        {
+          "action": "referral_bonus",
+          "amount": 2,
+          "time": "2026-11-06 04:58:28"
+        }
+      ],
+      "referred_by": null,
+      "referrals": [
+        "5652347927"
+      ],
+      "banned": false,
+      "joined": "2026-11-06 04:55:11"
+    },
+    "8970077719": {
+      "tokens": 0,
+      "plan": "free",
+      "expiry": null,
+      "username": "@ZeroCount00",
+      "name": "𝑳𝒆𝒐𝒏",
+      "history": [],
+      "referred_by": null,
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-06 04:58:24"
+    },
+    "5487600144": {
+      "tokens": 0,
+      "plan": "free",
+      "expiry": null,
+      "username": "@HKS260828",
+      "name": "HKS",
+      "history": [],
+      "referred_by": null,
+      "referrals": [],
+      "banned": false,
+      "joined": "2026-11-06 08:40:08"
+    }
+  },
+  "pending_orders": {
+    "470CAA907F": {
+      "uid": "8291937664",
+      "plan_id": "vip7",
+      "plan": {
+        "name": "VIP 7 Days",
+        "kind": "vip",
+        "value": 7,
+        "price": "50.00",
+        "active": true
+      },
+      "original": "50.00",
+      "discount": "0.00",
+      "amount": "50.00",
+      "status": "awaiting_payment",
+      "created": "2026-11-14 02:17:56"
+    },
+    "9C3DDFA6EE": {
+      "uid": "8986461324",
+      "plan_id": "vip7",
+      "plan": {
+        "name": "VIP 7 Days",
+        "kind": "vip",
+        "value": 7,
+        "price": "50.00",
+        "active": true
+      },
+      "original": "50.00",
+      "discount": "0.00",
+      "amount": "50.00",
+      "status": "awaiting_payment",
+      "created": "2026-11-14 02:52:03"
+    },
+    "0A01432838": {
+      "uid": "8994907976",
+      "plan_id": "vip30",
+      "plan": {
+        "name": "VIP 30 Days",
+        "kind": "vip",
+        "value": 30,
+        "price": "350.00",
+        "active": true
+      },
+      "original": "350.00",
+      "discount": "0.00",
+      "amount": "350.00",
+      "status": "awaiting_payment",
+      "created": "2026-11-14 13:03:04"
+    },
+    "7C09367B54": {
+      "uid": "8879120730",
+      "plan_id": "tok5",
+      "plan": {
+        "name": "5 Tokens",
+        "kind": "tokens",
+        "value": 5,
+        "price": "15.00",
+        "active": true
+      },
+      "original": "15.00",
+      "discount": "0.00",
+      "amount": "15.00",
+      "status": "awaiting_payment",
+      "created": "2026-11-14 21:04:56"
+    },
+    "DB992917C3": {
+      "uid": "8703428398",
+      "plan_id": "tok5",
+      "plan": {
+        "name": "5 Tokens",
+        "kind": "tokens",
+        "value": 5,
+        "price": "15.00",
+        "active": true
+      },
+      "original": "15.00",
+      "discount": "0.00",
+      "amount": "15.00",
+      "status": "awaiting_payment",
+      "created": "2026-11-16 02:43:10"
+    },
+    "B867C06784": {
+      "uid": "7001697608",
+      "plan_id": "vip30",
+      "plan": {
+        "name": "VIP 30 Days",
+        "kind": "vip",
+        "value": 30,
+        "price": "350.00",
+        "active": true
+      },
+      "original": "350.00",
+      "discount": "0.00",
+      "amount": "350.00",
+      "status": "awaiting_payment",
+      "created": "2026-11-16 02:59:06"
+    },
+    "446005C1F6": {
+      "uid": "6877438123",
+      "plan_id": "tok5",
+      "plan": {
+        "name": "5 Tokens",
+        "kind": "tokens",
+        "value": 5,
+        "price": "15.00",
+        "active": true
+      },
+      "original": "15.00",
+      "discount": "0.00",
+      "amount": "15.00",
+      "status": "awaiting_payment",
+      "created": "2026-11-16 07:37:16"
+    },
+    "50E7401CA6": {
+      "uid": "8634531020",
+      "plan_id": "vip7",
+      "plan": {
+        "name": "VIP 7 Days",
+        "kind": "vip",
+        "value": 7,
+        "price": "50.00",
+        "active": true
+      },
+      "original": "50.00",
+      "discount": "0.00",
+      "amount": "50.00",
+      "status": "pending_admin",
+      "created": "2026-11-16 08:36:18",
+      "screenshot_file_id": "AgACAgUAAxkBAAIxzmr6wL9gn6wEmyUD0bJMcJNfeY5fAAL0FGsbd4DYVz4qDd7kTetjAQADAgADeQADPQQ"
+    },
+    "CF292756C3": {
+      "uid": "8826868113",
+      "plan_id": "tok5",
+      "plan": {
+        "name": "5 Tokens",
+        "kind": "tokens",
+        "value": 5,
+        "price": "10.00",
+        "active": true
+      },
+      "original": "10.00",
+      "discount": "0.50",
+      "amount": "9.50",
+      "status": "awaiting_payment",
+      "created": "2026-11-02 07:11:22"
+    },
+    "4D68EC3CA2": {
+      "uid": "8826868113",
+      "plan_id": "tok10",
+      "plan": {
+        "name": "10 Tokens",
+        "kind": "tokens",
+        "value": 10,
+        "price": "15.00",
+        "active": true
+      },
+      "original": "15.00",
+      "discount": "0.75",
+      "amount": "14.25",
+      "status": "awaiting_payment",
+      "created": "2026-11-02 07:11:45"
+    },
+    "13583E080F": {
+      "uid": "8826868113",
+      "plan_id": "tok10",
+      "plan": {
+        "name": "10 Tokens",
+        "kind": "tokens",
+        "value": 10,
+        "price": "15.00",
+        "active": true
+      },
+      "original": "15.00",
+      "discount": "0.75",
+      "amount": "14.25",
+      "status": "awaiting_payment",
+      "created": "2026-11-02 07:11:47"
+    },
+    "8D624E2BA4": {
+      "uid": "8611613363",
+      "plan_id": "tok5",
+      "plan": {
+        "name": "5 Tokens",
+        "kind": "tokens",
+        "value": 5,
+        "price": "10.00",
+        "active": true
+      },
+      "original": "10.00",
+      "discount": "0.50",
+      "amount": "9.50",
+      "status": "rejected",
+      "created": "2026-11-02 07:52:23",
+      "screenshot_file_id": "AgACAgUAAxkBAAIaUmroQXoGS9a1VBAmRByaOwyGFNzjAAKKFWsbDQZJVww0afN8NOIYAQADAgADdwADPQQ",
+      "reviewed": "2026-11-02T11:20:08.081565"
+    },
+    "09FB957874": {
+      "uid": "6268131639",
+      "plan_id": "tok10",
+      "plan": {
+        "name": "10 Tokens",
+        "kind": "tokens",
+        "value": 10,
+        "price": "15.00",
+        "active": true
+      },
+      "original": "15.00",
+      "discount": "0.75",
+      "amount": "14.25",
+      "status": "approved",
+      "created": "2026-11-02 09:50:21",
+      "screenshot_file_id": "AgACAgUAAxkBAAIapmroXRaUmOkJC1N-2mM8ZXz594lFAAJoF2sbEhhJV7V3jvYlwBVFAQADAgADeQADPQQ",
+      "reviewed": "2026-11-02T11:19:36.230816"
+    },
+    "C0B2C23973": {
+      "uid": "8262385712",
+      "plan_id": "vip3",
+      "plan": {
+        "name": "VIP 3 Days",
+        "kind": "vip",
+        "value": 3,
+        "price": "30.00",
+        "active": true
+      },
+      "original": "30.00",
+      "discount": "1.50",
+      "amount": "28.50",
+      "status": "approved",
+      "created": "2026-11-02 11:07:40",
+      "screenshot_file_id": "AgACAgEAAxkBAAIay2rob2UMN5V_8j4TVb04SjLW4VqkAAKRDmsbIOBAR668VdAsGBSdAQADAgADeQADPQQ",
+      "reviewed": "2026-11-02T11:18:52.836770"
+    },
+    "8C27AF36AD": {
+      "uid": "8262385712",
+      "plan_id": "tok10",
+      "plan": {
+        "name": "10 Tokens",
+        "kind": "tokens",
+        "value": 10,
+        "price": "15.00",
+        "active": true
+      },
+      "original": "15.00",
+      "discount": "0.75",
+      "amount": "14.25",
+      "status": "awaiting_payment",
+      "created": "2026-11-02 11:08:24"
+    },
+    "B5AACADA1F": {
+      "uid": "8772498370",
+      "plan_id": "vip30",
+      "plan": {
+        "name": "VIP 30 Days",
+        "kind": "vip",
+        "value": 30,
+        "price": "200.00",
+        "active": true
+      },
+      "original": "200.00",
+      "discount": "10.00",
+      "amount": "190.00",
+      "status": "rejected",
+      "created": "2026-11-02 12:10:58",
+      "screenshot_file_id": "AgACAgUAAxkBAAIcQGrolZP8AAFiMKwt0Tf_CIpQKg8xCQACNRdrG7v3QVfyMqD6HEzUWQEAAwIAA3cAAz0E",
+      "reviewed": "2026-11-02T14:28:41.051916"
+    },
+    "B4FB37B6CB": {
+      "uid": "8789112128",
+      "plan_id": "vip30",
+      "plan": {
+        "name": "VIP 30 Days",
+        "kind": "vip",
+        "value": 30,
+        "price": "200.00",
+        "active": true
+      },
+      "original": "200.00",
+      "discount": "10.00",
+      "amount": "190.00",
+      "status": "approved",
+      "created": "2026-11-02 15:53:37",
+      "screenshot_file_id": "AgACAgUAAxkBAAIcYmrosjfh_pXmB3K2x1O8eoB2tY7rAAKJHWsbFDhIV45DZTqtv4wZAQADAgADeQADPQQ",
+      "reviewed": "2026-11-02T16:26:42.795241"
+    },
+    "EAA0EB0344": {
+      "uid": "8860353769",
+      "plan_id": "tok5",
+      "plan": {
+        "name": "5 Tokens",
+        "kind": "tokens",
+        "value": 5,
+        "price": "10.00",
+        "active": true
+      },
+      "original": "10.00",
+      "discount": "0.50",
+      "amount": "9.50",
+      "status": "awaiting_payment",
+      "created": "2026-11-03 08:45:02"
+    },
+    "24078172E6": {
+      "uid": "8902332992",
+      "plan_id": "tok5",
+      "plan": {
+        "name": "5 Tokens",
+        "kind": "tokens",
+        "value": 5,
+        "price": "10.00",
+        "active": true
+      },
+      "original": "10.00",
+      "discount": "0.50",
+      "amount": "9.50",
+      "status": "awaiting_payment",
+      "created": "2026-11-03 14:08:44"
+    },
+    "B57B61EED2": {
+      "uid": "7693439673",
+      "plan_id": "tok5",
+      "plan": {
+        "name": "5 Tokens",
+        "kind": "tokens",
+        "value": 5,
+        "price": "10.00",
+        "active": true
+      },
+      "original": "10.00",
+      "discount": "0.50",
+      "amount": "9.50",
+      "status": "awaiting_payment",
+      "created": "2026-11-04 10:31:27"
+    },
+    "C76E598FF2": {
+      "uid": "6715360194",
+      "plan_id": "tok5",
+      "plan": {
+        "name": "5 Tokens",
+        "kind": "tokens",
+        "value": 5,
+        "price": "10.00",
+        "active": true
+      },
+      "original": "10.00",
+      "discount": "0.50",
+      "amount": "9.50",
+      "status": "rejected",
+      "created": "2026-11-06 04:06:25",
+      "screenshot_file_id": "AgACAgUAAxkBAAIjYGrtUnAlj5TGSoHaNEIY5BzzqNtyAAKrEmsb_mpoV2sB4sYn72tUAQADAgADeQADPQQ",
+      "reviewed": "2026-11-06T06:04:05.213686"
+    }
+  },
+  "plans": {
+    "tok5": {
+      "name": "5 Tokens",
+      "kind": "tokens",
+      "value": 5,
+      "price": "10.00",
+      "active": true
+    },
+    "tok10": {
+      "name": "10 Tokens",
+      "kind": "tokens",
+      "value": 10,
+      "price": "15.00",
+      "active": true
+    },
+    "tok30": {
+      "name": "30 Tokens",
+      "kind": "tokens",
+      "value": 30,
+      "price": "55.00",
+      "active": true
+    },
+    "tok100": {
+      "name": "100 Tokens",
+      "kind": "tokens",
+      "value": 100,
+      "price": "80.00",
+      "active": true
+    },
+    "vip3": {
+      "name": "VIP 3 Days",
+      "kind": "vip",
+      "value": 3,
+      "price": "30.00",
+      "active": true
+    },
+    "vip7": {
+      "name": "VIP 7 Days",
+      "kind": "vip",
+      "value": 7,
+      "price": "60.00",
+      "active": true
+    },
+    "vip30": {
+      "name": "VIP 30 Days",
+      "kind": "vip",
+      "value": 30,
+      "price": "350.00",
+      "active": true
+    },
+    "monthly350": {
+      "name": "1 Month VIP",
+      "kind": "vip",
+      "value": 30,
+      "price": "350.00",
+      "active": true
+    }
+  },
+  "feedback_map": {
+    "12312": "7758917200",
+    "12358": "8611613363",
+    "12809": "8611613363",
+    "6942": "5722947735",
+    "7647": "8879120730",
+    "7875": "8879120730",
+    "7905": "8959878185",
+    "8381": "7895651878"
+  },
+  "redeem_codes": {}
+    }
